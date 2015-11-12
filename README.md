@@ -15,6 +15,12 @@ Commands:
 ## Commands synthax
 run
 ```shell
+kwgen
+```
+to get general help on the keyword generator
+
+run
+```shell
 kwgen [COMMAND] --help
 ```
 to know options for each commands
