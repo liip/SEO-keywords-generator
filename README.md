@@ -4,11 +4,12 @@
 The keyword generator provide multiple commands in order to create keyphrases for SEO monitoring tools such as AWRCloud, the tool currently used at Liip for internal SEO.
 
 Commands:
-| compare-awr  | Compare generated keywords with AWR Cloud keyword export                                   |   |   |   |
-|--------------|--------------------------------------------------------------------------------------------|---|---|---|
-| download-awr | Download keyphrases from AWR cloud into a file *AWR Cloud keyword export*                  |   |   |   |
-| generate     | Generate keywords from an input directory and save it into a file *generated keyword file* |   |   |   |
-| upload-awr   | Upload keyphrases and groups to AWR Cloud using *generated keyword file*                   |   |   |   |
+
+| compare-awr  | Compare generated keywords with AWR Cloud keyword export                                   |
+|--------------|--------------------------------------------------------------------------------------------|
+| download-awr | Download keyphrases from AWR cloud into a file *AWR Cloud keyword export*                  |
+| generate     | Generate keywords from an input directory and save it into a file *generated keyword file* |
+| upload-awr   | Upload keyphrases and groups to AWR Cloud using *generated keyword file*                   | 
 
 run
 ```shell
