@@ -12,6 +12,7 @@ Commands:
 | generate     | Generate keywords from an input directory and save it into a file *generated keyword file* |
 | upload-awr   | Upload keyphrases and groups to AWR Cloud using *generated keyword file*                   | 
 
+## Commands synthax
 run
 ```shell
 kwgen [COMMAND] --help
