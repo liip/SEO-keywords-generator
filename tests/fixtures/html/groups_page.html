@@ -1,0 +1,1257 @@
+
+<!doctype html>
+<html>
+<head>
+            <title>Liip AG</title>
+                <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+            <link rel="icon" href="">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1445611075">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/flick/jquery-ui.css">
+    <!--[if lt IE 9]>
+    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery fallback -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="/js/ajax_projects.js?v=1445611075"></script>
+            <script src="/js/res_en.js?v=1445611075"></script>
+        <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="/js/bootstrap/bootstrap.min.js?v=1445611075"></script>
+    <script src="/js/bootbox.min.js?v=1445611075"></script>
+    <script src="/js/common.js?v=1445611075"></script>
+    <script src="/js/bootstrap-datepicker.js?v=1445611075"></script>
+    <script src="/js/numeral.js?v=1445611075"></script>
+    <script src="/js/languages.js?v=1445611075"></script>
+    <script type="text/javascript">var basedir = "/";</script>
+    <script src="/js/research.js?v=1445611075"></script>
+        </head>
+<body class="
+                          whitelabel
+
+            ">
+<script>
+    var _selected_filter_name = "";
+    var _selected_filter_id = -1;
+</script>
+
+
+        <!-- Google Tag Manager -->
+        <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KQPCLB"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <script>(function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+                var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                        '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-KQPCLB');</script>
+        <!-- End Google Tag Manager -->
+
+
+
+<script>
+    var is_research_mode = false;
+</script>
+
+
+
+
+<div class="top-navbar navbar-inverse">
+
+<button class="navbar-btn navbar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+
+      <a href="/projects.php" id="home-logo" class="whitelabel
+    hidden-xs
+        pull-left" style="background-image: url(https://s3.amazonaws.com/awrcloud.client_folders/);">
+      <span class="svg-cover"></span>
+      <svg height="20" width="20">
+        <use xlink:href="/svg/symbols.svg#home"></use>
+      </svg>
+    </a>
+
+  <!-- If user is signed in and projects exists-->
+<script>
+    var report_domain = "";
+</script>
+
+  <form method="get" action="/keyword_groups.php" id="projectselector" class="pull-left">
+
+
+
+
+          <input type="hidden" name="action" value="showstats">
+    <input type="hidden" name="activetab" value="">
+    <input type="hidden" name="keyword" value="">
+    <input type="hidden" id="research_domain_id" name="domain" value="https://www.swissaid.ch/">
+
+    <input type="hidden" name="report_type" value="">
+    <input type="hidden" name="report_id" value="">
+        <input type="hidden" name="project_id" id="project_id" value="1">
+
+
+        <ul class="nav pull-left">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle project-toggle" data-toggle="dropdown" id="prj_name">
+                *.liip.ch <span class="caret"></span>
+            </a>
+            <div class="dropdown-menu" role="menu">
+            <ul class="list-unstyled project-dropdown">
+                            </ul>
+            <ul class="list-unstyled scrollable project-dropdown" id="projects_dropdown">
+                                                                                                            <li class="removable_element active">
+                    <a title="" href="#" onclick="changeProject(1, 'liip.ch');">
+                      <b>*.liip.ch</b>
+                      <small class="dropdown-faded-description">liip.ch</small>
+                    </a>
+                  </li>
+                                                                                                              <li class="removable_element ">
+                    <a title="" href="#" onclick="changeProject(4, 'www.f-p-sa.ch');">
+                      <b>Favorol Papaux SA</b>
+                      <small class="dropdown-faded-description">www.f-p-sa.ch</small>
+                    </a>
+                  </li>
+                                                                                                              <li class="removable_element ">
+                    <a title="" href="#" onclick="changeProject(2, 'giampierobodino.com');">
+                      <b>Giampiero Bodino</b>
+                      <small class="dropdown-faded-description">giampierobodino.com</small>
+                    </a>
+                  </li>
+                                                                                                              <li class="removable_element ">
+                    <a title="" href="#" onclick="changeProject(3, 'https://www.swissaid.ch/');">
+                      <b>Swissaid</b>
+                      <small class="dropdown-faded-description">https://www.swissaid.ch/</small>
+                    </a>
+                  </li>
+                                              </ul>
+            <ul class="list-unstyled project-dropdown">
+                                <li class="divider" id="projects_dropdown_divider"></li>
+                                    <li>
+                        <a href="/newproject.php">
+                            <i class="icon-plus">
+                            </i> Add new website
+                        </a>
+                    </li>
+                            </ul>
+            </div>
+                                  </li>
+        </ul>
+
+
+          </form>
+
+        <!-- If user is signed in -->
+            <ul class="nav pull-right">
+        <li class="dropdown pull-right">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="//gravatar.com/avatar/e2fd75356b4ca9c778e0c7f269a99a94?s=80&d=404&r=g" class="gravatar" width="16" height="16">
+                <b class="caret"></b>
+            </a>
+          <ul class="dropdown-menu" role="menu">
+            <li class="disabled centered">
+                <a href="#">
+                  <img src="//gravatar.com/avatar/e2fd75356b4ca9c778e0c7f269a99a94?s=80&d=404&r=g" class="gravatar" width="64" height="64">
+                  <br>
+                  <small>Signed in as benoit.pointet@liip.ch</small>
+                </a>
+            </li>
+                        <li class="divider"></li>
+                          <li class="visible-xs">
+                              </li>
+              <li class="visible-xs">
+                  <a href="http://www.advancedwebranking.com/online/docs/" target="_blank">
+                      Documentation
+                  </a>
+              </li>
+              <li class="visible-xs">
+                <a href="http://www.advancedwebranking.com/blog/category/awr-cloud-updates/" target="_blank">
+                  What's new
+                </a>
+              </li>
+              <li class="divider visible-xs"></li>
+                        <!-- If superuser -->
+                                              <li >
+                    <a href="/profile-plans.php">Upgrade</a>
+                  </li>
+
+                  <li>
+                      <a href="/payment_info_details.php" target="_awc_1445865535">Edit payment info <i class="icon-external-link icon-white"></i></a>
+                  </li>
+                                                      <li >
+                    <a href="/invoices.php">Invoices</a>
+                  </li>
+                                                <!-- End if superuser -->
+            <li >
+              <a href="/profile.php">Account settings</a>
+            </li>
+            <!-- If not regular user -->
+                            <li class=""><a href="/users.php">Users</a></li>
+             <!-- End if not regular user -->
+                                    <li class="divider"></li>
+            <li><a href="/signout.php">Sign out</a></li>
+          </ul>
+        </li>
+
+                  <li class="dropdown pull-right hidden-xs">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-question-sign icon-white"></i> <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                                </li>
+              <li>
+                  <a href="http://www.advancedwebranking.com/online/docs/" target="_blank">
+                      Documentation
+                  </a>
+              </li>
+              <li>
+                <a href="http://www.advancedwebranking.com/blog/category/awr-cloud-updates/" target="_blank">
+                  What's new
+                </a>
+              </li>
+
+              <li class="divider"></li>
+              <li><a href="#" onclick="Intercom('show'); $('html').click()"><i class="icon-envelope"></i> Send us a message...</a></li>
+                                    </ul>
+          </li>
+
+
+
+     <script type="text/javascript">
+    var base_dir = '/';
+    var su_id = '59619167'
+</script>
+<script type="text/javascript" src="/js/notifications-ws.js?version=1445611075"></script>
+<li class="dropdown pull-right  hidden" id="notif_drop">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    <i class="icon-bell-alt"></i>
+  	<sup class="label label-danger" id="notifText" style="display: inline-block"></sup>
+  	<b class="caret"></b>
+  </a>
+
+  <div class="dropdown-menu" role="menu">
+    <ul class="list-unstyled scrollable notifications-dropdown" id="notif_list"></ul>
+    <ul class="list-unstyled" id="notif_list_actions"></ul>
+  </div>
+</li>
+    </ul>
+     <!-- End if user is signed in -->
+    <!-- If user is NOT signed in -->
+    <!-- End if user is NOT signed in -->
+  </div>
+
+<div class="main-navbar">
+
+    <ul class="main-navbar-menu">
+
+                  <li class="visible-xs ">
+            <a href="/projects.php">
+              <svg height="45" width="45">
+                <use xlink:href="/svg/symbols.svg#home"></use>
+              </svg>
+              <span>Home</span>
+            </a>
+          </li>
+
+
+
+      <li class="dropdown ">
+        <a href="/overview_organic.php?project_id=1" class="dropdown-toggle" data-toggle="dropdown" onclick="$('.loading-overlay').show();window.location=this.href;">
+          <svg height="45" width="45">
+            <use xlink:href="/svg/symbols.svg#ranking"></use>
+          </svg>
+          <span>Rankings</span>
+         </a>
+        <ul class="dropdown-menu">
+
+                <li >
+                    <a href="/overview_organic.php?project_id=1">
+                        Overview
+                    </a>
+                </li>
+                <li ><a href="/reports_overview_ranking.php?project_id=1">Search Engine Comparison</a></li>
+                <li ><a href="/reports_seoverview_ranking.php?project_id=1">Website Comparison</a></li>
+
+                <li ><a href="/visibility.php?project_id=1">Visibility</a></li>
+                <li ><a href="/reports_website_ranking.php?project_id=1">Website Ranking</a></li>
+                <li ><a href="/reports_keyword_ranking.php?project_id=1">Keyword Ranking</a></li>
+
+                <li ><a href="/reports_keywordgroups.php?project_id=1">Keyword Groups</a></li>
+                <li ><a href="/reports_clickshare.php?project_id=1">Click Share</a></li>
+
+        </ul>
+      </li>
+
+      <li class="dropdown ">
+          <a href="/social.php" class="dropdown-toggle" data-toggle="dropdown" onclick="$('.loading-overlay').show();window.location=this.href;">
+            <svg height="45" width="45">
+              <use xlink:href="/svg/symbols.svg#social"></use>
+            </svg>
+            <span>Social</span>
+          </a>
+          <ul class="dropdown-menu">
+              <li >
+                  <a href="/social.php">Overview</a>
+              </li>
+              <li >
+                  <a href="/twitter.php">Twitter</a>
+              </li>
+              <li >
+                  <a href="/facebook.php">Facebook</a>
+              </li>
+
+          </ul>
+      </li>
+
+
+
+                  <li class="dropdown ">
+              <a href="/reports.php" onclick="$('.loading-overlay').show();window.location=this.href;" class="dropdown-toggle" data-toggle="dropdown">
+                <svg height="45" width="45">
+                  <use xlink:href="/svg/symbols.svg#reports"></use>
+                </svg>
+                <span>Reports</span>
+              </a>
+                            <ul class="dropdown-menu">
+                  <li >
+                    <a href="/reports.php">Overview</a>
+                  </li>
+                                        <li >
+                        <a href="/newreportmanager.php?project_id=1">Master Reports</a>
+                      </li>
+
+                                        <li >
+                        <a href="/newtemplatesmanager.php?project_id=1">Templates</a>
+                      </li>
+                                </ul>
+          </li>
+
+
+            <li class="dropdown ">
+
+                <a href="/research/dashboard.php?domain=&href=1" onclick="$('.loading-overlay').show();window.location=this.href;" class="dropdown-toggle" data-toggle="dropdown">
+                    <svg height="45" width="45">
+                      <use xlink:href="/svg/symbols.svg#research"></use>
+                    </svg>
+                    <span>
+                      Research
+                      <small class="label label-warning pos-top-right beta">
+                        beta
+                      </small>
+                    </span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="">
+                    <a href="/research/dashboard.php?domain=&href=1">
+                      Overview
+                    </a>
+                  </li>
+                    <li class="">
+                        <a href="/research/organic/rankings.php?domain=&href=1">
+                            Organic Rankings
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/research/paid/rankings.php?domain=&href=1">
+                            Paid Rankings
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="/research/keywords/keywords.php?domain=">
+                            Keywords
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/research/competitors-intersection.php?domain=&website1=&href=1">
+                            Common Keywords
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+
+                  <li class="dropdown ">
+                <a href="/website-auditor.php" onclick="$('.loading-overlay').show();window.location=this.href;" class="dropdown-toggle" data-toggle="dropdown">
+                  <svg height="45" width="45">
+                    <use xlink:href="/svg/symbols.svg#playground"></use>
+                  </svg>
+                  <span>Playground</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="">
+                        <a href="/website-auditor.php?project_id=1">
+                            <span>Auditor</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/gwt_import.php?project_id=1">
+                            Google Webmaster Tools
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/variations.php">
+                            Google Algorithm Changes
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/features-spread.php">
+                            Google SERP Features
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+
+
+
+            <li class="dropdown  active">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="/projects.php?action=manageproject&activetab=keywords" onclick="$('.loading-overlay').show();window.location=this.href;" >
+                  <svg height="45" width="45">
+                    <use xlink:href="/svg/symbols.svg#settings"></use>
+                  </svg>
+                  <span>Settings</span>
+                </a>
+        <ul class="dropdown-menu">
+                    <li class="active">
+                        <a href="/projects.php?action=manageproject&activetab=websitesettings">*.liip.ch settings</a>
+                    </li>
+                    <li >
+                        <a href="/profile.php">Account settings</a>
+                    </li>
+                </ul>
+            </li>
+
+      </ul>
+
+
+        <!-- Show plan info only for the right users -->
+                    <!-- If quota exceeded -->
+                                                                                    <!-- End if quota exceeded -->
+
+            <!-- If trial in progress & quota not exceeded-->
+                        <!-- End trial progress -->
+
+            <!-- Display KW units -->
+
+
+                <a href="/projects.php?mode=resources" class="plan-status visible-sm visible-md visible-lg white-link">
+                  <h5 class="plan-status__title plan-status_hidden">
+                    <small>
+                      Your Pro plan resources
+                    </small>
+                  </h5>
+                  <span class="progress auto-width" style="display: block">
+
+                    <span class="progress-bar progress-bar-warning" style="width: 75%;"></span>
+                    <span class="progress-bar progress-bar-success" style="width: 25%;"></span>
+                  </span>
+                  <span class="row plan-status_hidden">
+                    <span class="col-sm-6">
+                      <span class='label label-warning label-1em'>Consumed  75%</span>
+                    </span>
+                    <span class="col-sm-6">
+                      <span class='label label-success label-1em'>Remaining  25%</span>
+                    </span>
+                  </span>
+                </a>
+                        <!-- Display KW units -->
+
+                <!-- End of plan info  -->
+
+</div>
+
+<script type="text/javascript">
+  //set display status for getting started
+  var js_completion_display = "1";
+
+  function changeClientType(checked_element, unchecked_element)
+  {
+    $('#'+checked_element).prop('checked', true);
+    $('#'+unchecked_element).prop('checked', false);
+  }
+
+  function disableInput(to_enable, to_disable)
+  {
+    $('#'+to_enable).prop('disabled', false);
+    $('#'+to_disable).prop('disabled', true);
+  }
+
+  function validateEmail()
+  {
+    var custom_email = "";
+    if($("#enable_email").is(":checked"))
+    {
+      user_id = -2;
+      custom_email = $("#user_email").val();
+      if(custom_email.length==0)
+      {
+        bootbox.alert(getResStr("specify_email"));
+        return;
+      }
+
+      //Validate email:
+      var invalid_emails = new Array();
+      var emails = custom_email.split(",");
+      for (var i=0;i<emails.length;i++)
+      {
+        if(emails[i].indexOf("@") == -1 && emails[i].length > 0)
+        invalid_emails.push(emails[i]);
+      }
+
+      if(invalid_emails.length != 0){
+      bootbox.alert("<div style=\"width: 100%;word-wrap: break-word;table-layout: fixed;\">" + getResStr("invalid_emails") + invalid_emails + "</div>");
+      return;
+      }
+
+      if(custom_email.indexOf(",", custom_email.length - 1) !== -1)
+      {
+        custom_email = custom_email.replace(/,$/, "");
+      }
+    }
+
+    if($('#quick_report_name').val() == "Report Preview")
+      bootbox.alert("Invalid report name");
+    else{
+      var returned = generateQuickReport();
+      if(returned != 'alert'){
+        toggle_quick_report('', '');
+        //toggle_quick_report(current_quota, plan_quota);
+      }
+    }
+
+  }
+</script>
+    <!-- NEW ADD SEARCH ENGINES FORM -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places&language=en-US"></script>
+<script src='js/locations_validator_class.js'></script>
+<script src="js/load-countries.js"></script>
+<script>
+function checkSES() {
+    var sel_country = $('#nselected_country').val();
+    var sel_segroup = $('input:hidden[name=nsegroupid]').val();
+    if(customSection == 'local') $('#se_location_type').val('custom');
+    var sesstring = '';
+    var ses = '';
+    var addedses = new Array();
+    var allowadd = false;
+        addedses.push();
+    ses = ses + '  ';
+
+        if(sel_country!='' && sel_segroup==1) allowadd=true;
+        var selectedSes = new Array();
+        $('.selectedsesclass:checked').each(function () {
+                selectedSes.push($(this).val());
+                sesstring = sesstring + ' ' + $(this).val();
+                if(ses.indexOf(' '+ $(this).val()+' ') <0 ) allowadd = true;
+        });
+    if(!allowadd) bootbox.alert('Please select some search engines first');
+    else $('#nsearchenginesform').submit();
+}
+
+
+
+
+
+
+    function loadSEsForCountry(country_location, country_description)
+    {
+        $('#nadd_searchengines_form').load('nget_segroups_form.php?prefix=&selected_country='+country_location+'&adjustment_path='+''+'&selection=&selected_se_group=&customSection=');
+        $('#selected_country_name').html('<img src=\'https://s3.amazonaws.com/caph.awronline/resources/flags/' + country_location.toLowerCase() +'.gif\'> ' + country_description);
+        $('#nselected_country').val(country_location);
+        $('#country_dropdown.dropdown-toggle').dropdown('toggle');
+        return false;
+    }
+</script>
+<form method="post" action="projects.php" id="nsearchenginesform" name="nsearchenginesform">
+    <input type="hidden" name="action" value="nperform_addsearchengines">
+    <input type="hidden" name="project_id" value="1">
+    <input type="hidden" name="mode" value="">
+    <input type="hidden" id="map-canvas">
+    <input type="hidden" name="activetab" value="searchengines">
+    <input type="hidden" name="nsegroupid" id="nsegroupid" value="">
+    <input type="hidden" name="nselected_country" id="nselected_country" value="CH">
+    <div class="modal fade" id="nadd_searchengines">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3>Add search engines</h3>
+                </div>
+                <div class="modal-body">
+
+                    <br>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="nselected_country" class="control-label col-md-3 left-inline">
+                                Country
+                            </label>
+                            <div class="col-md-9">
+                                <div class="btn-group">
+                                    <button class="btn btn-default dropdown-toggle" id="country_dropdown" data-toggle="dropdown">
+                                        <span id="selected_country_name"><img src="https://s3.amazonaws.com/caph.awronline/resources/flags/ch.gif"> Switzerland</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <div class="dropdown-menu" role="menu">
+                                        <ul class="list-unstyled">
+                                            <li><input class="dropdown-input form-control" id="cntr_txt_search_field" type="text" value="" placeholder="Search countries" onkeyup="searchList('cntr_txt_search_field', 'cntr-searchable', 'cntr-no-match')" onclick="event.stopPropagation();return false" autofocus></li>
+                                            <li class="divider"></li>
+                                        </ul>
+                                        <ul class="list-unstyled scrollable" data-loaded="0" id="cntr_ul">
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div id="nadd_searchengines_form"></div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <a class="btn btn-default btn-primary" id="ses_add_button" onclick="checkSES();" >
+                        Add search engine
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- EDIT GROUP FORM -->
+<div class="modal fade" id="edit_group">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3>Edit Group</h3>
+            </div>
+
+            <form method="post" action="projects.php" id="editgroupform" name="editgroupform">
+                <input type="hidden" name="action" value="edit_group_name">
+                <input type="hidden" name="fromkwgroups" value="0">
+                <input type="hidden" name="project_id" value="1">
+                <input type="hidden" name="group_id" id="gr_id_field" value="">
+                <div class="modal-body">
+                    <label for="group_name">Group Name:</label>
+                    <input type="text" class="form-control" name="group_name" id="group_name" maxlength="30">
+                </div>
+                <div class="modal-footer">
+                  <a href="#" onclick="delete_group(1,$('#gr_id_field').val());" class="btn btn-danger-hover">
+                    Delete group
+                  </a>
+                  or
+                  <input type="submit" class="btn btn-default btn-success" value="Update group" onclick="if($('#group_name').val().length == 0){ bootbox.alert('Keyword group name cannot be empty!'); return false;} ">
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- ADD KEYWORDS FORM -->
+<div class="modal fade" id="add_keywords">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3>Add Keywords</h3>
+            </div>
+
+            <form method="post" action="projects.php" id="keywordsform" name="keywordsform">
+                <input type="hidden" name="action" value="perform_addkeywords">
+                <input type="hidden" name="project_id" value="1">
+                <input type="hidden" name="updatefrequency">
+                <input type="hidden" name="new_project" value="">
+                <div class="modal-body">
+                    <label for="keywords">Keywords (one per line)</label>
+                    <textarea name="keywords" id="keywords" class="form-control" placeholder="keywords..." cols="30" rows="7"></textarea>
+
+                    <div class="checkbox">
+                        <label for="mark_branded">Mark these keywords as branded</label>
+                        <input type="checkbox" name="mark_branded" id="mark_branded">
+                    </div>
+
+                    <label for="group_id">Assign keywords to the following group:</label>
+                    <select class="form-control" name="group_id" id="group_id" onChange="showAddToNewGroup(this);">
+                        <option value="-3" selected>None</option>
+                        <option value="-1">New Group</option>
+                                                                                                                        </select>
+
+                    <div id="add_to_new_group" class="hidden">
+                        <br>
+                        <label for="new_group">Enter the name of the keyword group:</label>
+                        <input class="form-control" type="text" name="new_group" id="new_group" placeholder="Group Name...">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a id="add-your-keywords" class="btn btn-default btn-primary disabled" onclick="$(this).text('Adding keywords...').addClass('disabled'); if(validateKeywords()) validateResources();">
+                        Add
+                    </a>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script>
+    // Make sure there is at least a keyword
+    $("textarea#keywords").bind('input propertychange', function(){
+      if ($(this).val().trim() != '') {
+        $('#add-your-keywords').removeClass('disabled');
+      } else
+            $('#add-your-keywords').addClass('disabled');
+    });
+
+    function validateKeywords() {
+        $('input:hidden[name=updatefrequency]').val('');
+        var kwtextarea= $('textarea[id=keywords]').val().trim();
+        if (kwtextarea.length == 0)
+            return false;
+
+        var KeywordsArray = kwtextarea.split('\n');
+        var kwunits= KeywordsArray.length*(1.5);
+        var remaining_kwunits= 1690;
+        for (var i = 0; i < KeywordsArray.length; i++) {
+            var kw= KeywordsArray[i].trim();
+            var kwcommas=kw.split(",");
+            if(kwcommas.length>3) {
+                var msg = getResStr("invalid_kw", kw);
+                bootbox.alert(msg);
+                i=KeywordsArray.length;
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function validateResources() {
+
+
+        $('input:hidden[name=updatefrequency]').val('');
+        var kwtextarea= $('textarea[id=keywords]').val();
+        var KeywordsArray = kwtextarea.split('\n');
+        var frequency_factor = 0.5;
+        var project_frequency= -3;
+        if(project_frequency==-2) frequency_factor=0;
+        var kwunits= KeywordsArray.length*(3*frequency_factor);
+        var remaining_kwunits=1690;
+
+
+        if(kwunits>remaining_kwunits) {
+            $('#add_keywords').modal('hide');
+            var msg = getResStr("warn_exceed_quota", KeywordsArray.length);
+            bootbox.alert(msg);
+            $('#add-your-keywords').text('Add').removeClass('disabled');
+        }
+        else {
+            $('#keywordsform').submit();
+        }
+
+    }
+    function showAddToNewGroup(sel){
+        if(sel.options[sel.selectedIndex].value==-1)
+            $("#add_to_new_group").removeClass( "hidden" );
+        else
+            $("#add_to_new_group").addClass( "hidden" );
+    }
+
+</script>
+
+    <!-- ADD COMPETITORS FORM -->
+<div class="modal fade" id="add_competitors">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3>Add competitors</h3>
+            </div>
+
+            <form method="post" action="projects.php" id="competitorsform" name="competitorsform" >
+                <input type="hidden" name="action" value="perform_addcompetitors">
+                <input type="hidden" name="project_id" value="1">
+                <input type="hidden" name="customer_plan_type" id="customer_plan_type" value="7">
+                <input type="hidden" name="project_competitors_count" value="33">
+                <div class="modal-body">
+                    <label for="add_competitors_form">Competitors (one per line)</label>
+                    <textarea name="competitors" class="form-control" id="add_competitors_form" placeholder="mycompetitor.com" cols="30" rows="7"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <a id="add-your-competitors"  href="#" class="btn btn-default btn-primary disabled" onclick="validateCompetitors();">Add</a>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</form>
+<script>
+    // Make sure there is at least a competitor
+    $("textarea#add_competitors_form").bind('input propertychange', function(){
+      if ($(this).val().trim() != '') {
+        $('#add-your-competitors').removeClass('disabled');
+      } else
+            $('#add-your-competitors').addClass('disabled');
+    });
+
+
+
+    function validateCompetitors() {
+        var CompetitorsTextarea= $('textarea[name=competitors]').val().trim();
+        if (CompetitorsTextarea.length == 0)
+            return false;
+        var CompetitorsCount= $('input:hidden[name=project_competitors_count]').val();
+        var CustomerPlanType= $('#customer_plan_type').val();
+        var limit = 50;
+        if(CustomerPlanType==0) limit = 1;
+
+        var CompetitorsArray = CompetitorsTextarea.split('\n');
+        var FutureCompetitorsCount = parseInt(CompetitorsArray.length) + parseInt(CompetitorsCount);
+        if (FutureCompetitorsCount <= limit)
+        {
+            $("#add-your-competitors").text('Adding competitors...').addClass('disabled');
+            $.ajax({
+                type: "GET",
+                url: "projects.php?" + $('#competitorsform').serialize()
+            }).done(function( data ) {
+                if (data != '')
+                {
+                    bootbox.alert(data, function() {
+                        window.location.reload();
+                    } );
+                }
+                else {
+                    window.location.reload();
+                }
+
+            });
+        }
+        else
+        {
+            bootbox.alert("You're trying to add too many competitors. Maximum " + limit + " competitors allowed for a project.");
+
+        }
+        return false;
+    }
+
+</script>
+
+
+
+<script>
+        var allow_add = true;
+    </script>
+
+<div class="container-main">
+    <div class="loading-overlay">
+        <div class="loading-indicator"></div>
+    </div>
+
+<div class="getting-started  hidden"  onclick="window.location = '/getting-started.php'" style="cursor: pointer" >
+
+
+
+        <h4>Getting started</h4>
+        <button type="button" class="close gs-close" title="Do not show this anymore." onclick="setCompletions(1, 0); showCompletionsTooltip();">
+          &times;
+        </button>
+                  <p>
+            Yay, you have completed 5 out of 6 tasks already!
+          </p>
+
+  <div id="progress-bar">
+    <ol id="progress-steps">
+        <li class="progress-step">
+            <span class="count highlight-index"></span>
+        </li>
+      <li class="progress-step">
+        <span class="count highlight-index"></span>
+      </li>
+      <li class="progress-step">
+        <span class="count highlight-index"></span>
+      </li>
+      <li class="progress-step">
+        <span class="count highlight-index"></span>
+      </li>
+      <li class="progress-step">
+        <span class="count highlight-index"></span>
+      </li>
+      <li class="progress-step">
+        <span class="count "></span>
+      </li>
+    </ol>
+  </div>
+</div><script type="text/javascript" src="js/keywords.js?version=1445611075"></script>
+<script src="/js/jquery.ui.sortable.js"></script>
+
+<div id="keyword_groups">
+  <div class="page-header-block row-responsive-centered row">
+  <div class="col-lg-8">
+    <h1 class="page-header-title">
+
+
+      Keyword groups
+              settings for <strong>*.liip.ch</strong>
+
+                      </h1>
+  </div>
+
+        </div>
+
+<div class="row row-responsive-centered filter-header filter-header-adjacent">
+  <div class="col-sm-12">
+    <ul class="nav nav-pills">
+            <li><a href="projects.php?action=manageproject&activetab=websitesettings">Website</a></li>
+      <li><a href="projects.php?action=manageproject&activetab=keywords">Keywords</a></li>
+      <li class="active"><a href="keyword_groups.php?project_id=1">Groups</a></li>
+      <li><a href="keywords_notes.php?project_id=1">Notes</a></li>
+      <li><a href="projects.php?action=manageproject&activetab=searchengines">Search Engines</a></li>
+      <li><a href="projects.php?action=manageproject&activetab=competitors">Competitors</a></li>
+        <li><a href="projects.php?action=manageproject&activetab=social">Social</a></li>
+        <li><a href="show_analytics_accounts.php">Analytics</a></li>
+        <li><a href="projects.php?action=manageproject&activetab=webmastertools">Webmaster Tools</a></li>
+                  <li><a href="dev-api.php">Developer API</a></li>
+                          <li class="dropdown ">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                              Export / Import
+                            <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="">
+                <a href="exports.php">Export</a>
+              </li>
+              <li class="">
+                <a href="import.php">Import</a>
+              </li>
+            </ul>
+          </li>
+                  </ul>
+  </div>
+</div>
+
+
+  <script>
+      function toggleSelKG()
+      {
+          $(".sel_class").prop("checked", $("#sel_all_kg").prop("checked"));
+      }
+
+      function applyNewOrder(p_id)
+      {
+          var orderedIDs = "";
+          $(".group-row").each(function() {
+              orderedIDs += $(this).attr("data-group-id") + " ";
+          } );
+
+          $('.loading-overlay').show();
+
+          $.ajax({
+              type: "POST",
+              url: "keyword_groups.php?action=updateKwGroupRankBatch",
+              data: { items: orderedIDs, project_id : p_id}
+          }).done(function( msg ) {
+              if (msg == 'OK')
+                  window.location.reload();
+              else
+              {
+                  $('.loading-overlay').hide();
+                  bootbox.alert(msg);
+              }
+          });
+      }
+
+      function refreshManageButton()
+      {
+          var count = $(".sel_class:checked").length;
+          if (count > 0)
+          {
+              $("#manage_btn").addClass("btn-danger");
+              $("#manage_badge").removeClass("hidden");
+              $("#manage_badge").html(count);
+          }
+          else
+          {
+              $("#manage_btn").removeClass("btn-danger");
+              $("#manage_badge").addClass("hidden");
+          }
+      }
+
+      function getSelectedGroupIDsAsString()
+      {
+          if ($(".sel_class:checked") == 0)
+              return "";
+
+          var ids = "";
+          var first = true;
+
+          $(".sel_class:checked").each(function (i, obj) {
+              if (!first)
+                  ids += ",";
+
+              ids += $(this).val();
+
+              first = false;
+          });
+
+
+          return ids;
+      }
+
+      function _update_kws_group_rank(p_id,move_type_id){
+          if (getSelectedGroupIDsAsString() == '')
+          {
+              bootbox.alert("Please select at least one item");
+              return;
+          }
+          bootbox.confirm(getResStr("confirm_move_selected_groups"), function(confirmed)
+          {
+              if (confirmed)
+              {
+                  var ids = getSelectedGroupIDsAsString();
+                  $.ajax({
+                      type: "POST",
+                      url: "keyword_groups.php?action=updateKwGroupRankBatch",
+                      data: { items: ids, project_id : p_id, move_type : move_type_id }
+                  }).done(function( msg ) {
+                      if (msg == 'OK')
+                          window.location.reload();
+                      else
+                          bootbox.alert(msg);
+
+                  });
+              }
+          });
+      }
+
+      function _update_kws_group_rank(p_id,move_type_id){
+          if (getSelectedGroupIDsAsString() == '')
+          {
+              bootbox.alert("Please select at least one item");
+              return;
+          }
+          bootbox.confirm(getResStr("confirm_move_selected_groups"), function(confirmed)
+          {
+              if (confirmed)
+              {
+                  var ids = getSelectedGroupIDsAsString();
+                  $.ajax({
+                      type: "POST",
+                      url: "keyword_groups.php?action=updateKwGroupRankBatch",
+                      data: { items: ids, project_id : p_id, move_type : move_type_id }
+                  }).done(function( msg ) {
+                      if (msg == 'OK')
+                          window.location.reload();
+                      else
+                          bootbox.alert(msg);
+
+                  });
+              }
+          });
+      }
+
+      function _delete_kws_groups(p_id){
+          if (getSelectedGroupIDsAsString() == '')
+          {
+              bootbox.alert("Please select at least one item");
+              return;
+          }
+          bootbox.confirm("Are you sure you want to delete the selected groups?<br><br>This action cannot be undone!", function(confirmed)
+          {
+              if (confirmed)
+              {
+                  var ids = getSelectedGroupIDsAsString();
+                  $.ajax({
+                      type: "POST",
+                      url: "keyword_groups.php?action=deleteGroups",
+                      data: { items: ids, project_id : p_id}
+                  }).done(function( msg ) {
+                      if (msg == 'OK')
+                          window.location.reload();
+                      else
+                          bootbox.alert(msg);
+
+                  });
+              }
+          });
+      }
+  </script>
+
+
+
+    <div class="table-responsive">
+      <table class="table table-striped table-sticky-header">
+        <thead>
+          <tr>
+            <td colspan="100" class="filter-header-cell">
+              <div class="row row-responsive-left filter-header filter-header-table">
+                <div class="col-sm-12">
+                  <button type="button" class="btn btn-default" id="manage_btn" onclick="_delete_kws_groups( 1 )">
+                    Delete selected <span class="badge hidden" id="manage_badge"></span>
+                  </button>
+                  <button id="apply_btn" type="button" class="btn btn-default disabled" onclick="applyNewOrder( 1 )">
+                    Apply order
+                  </button>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="cell-handle--holder"></th>
+            <th>
+              <input type="checkbox" id="sel_all_header" onchange="$('.sel_class').prop('checked', $('#sel_all_header').prop('checked'));refreshManageButton();">
+              Keyword group
+            </th>
+          </tr>
+        </thead>
+        <tbody id="current_groups">
+                      <tr class="group-row" data-group-id="36">
+              <td class="cell-handle--holder">
+                <span class="cell-handle" title="Drag to move up/down"></span>
+              </td>
+              <td>
+                <input type="checkbox" class="sel_class" name="sel_groups[]" value="36" onchange="refreshManageButton()">
+                <a href="#" onclick="$('input[name=fromkwgroups]').val(1);$('input[name=group_name]').val('sdf');$('input[name=group_id]').val('36');$('#edit_group').modal('toggle');" title="Edit keyword group">
+                  sdf
+                </a>
+                <a href="projects.php?action=manageproject&activetab=keywords&selected_keyword_group_id=36" title="View keywords for the sdf group">
+                  <span class="badge">
+                    1
+                  </span>
+                </a>
+              </td>
+            </tr>
+                      <tr class="group-row" data-group-id="37">
+              <td class="cell-handle--holder">
+                <span class="cell-handle" title="Drag to move up/down"></span>
+              </td>
+              <td>
+                <input type="checkbox" class="sel_class" name="sel_groups[]" value="37" onchange="refreshManageButton()">
+                <a href="#" onclick="$('input[name=fromkwgroups]').val(1);$('input[name=group_name]').val('coco');$('input[name=group_id]').val('37');$('#edit_group').modal('toggle');" title="Edit keyword group">
+                  coco
+                </a>
+                <a href="projects.php?action=manageproject&activetab=keywords&selected_keyword_group_id=37" title="View keywords for the coco group">
+                  <span class="badge">
+                    0
+                  </span>
+                </a>
+              </td>
+            </tr>
+                  </tbody>
+      </table>
+    </div>
+
+    </div>
+
+<script>
+$(function() {
+  $( "#current_groups").sortable({
+    axis: "y",
+    handle: ".cell-handle",
+    update: function(container, p) {
+        $("#apply_btn").removeClass("disabled");
+        $("#apply_btn").addClass("btn-success");
+    }
+  });
+});
+</script>		</div> <!-- end  .container-main -->
+        <h5 id="filter_indicator" class="hidden" style="padding : 8px"></h5>
+
+    <script type="text/javascript">
+    updateNotifications();
+</script>
+ <BR><BR><BR><BR>
+
+
+<script>
+(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;
+s.src='https://widget.intercom.io/widget/u8jb8tek';
+var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+
+    <script id="IntercomSettingsScriptTag">
+  var intercomSettings = {
+    // TODO: The current logged in user's email address.
+    email: "benoit.pointet@liip.ch",
+    // TODO: The current logged in user's sign-up date as a Unix timestamp.
+    created_at: 1397001600,
+  'plan' : 'Pro',
+  'account_type' : 'paid',
+
+  'price' : 99,
+
+
+          'Name' : 'Benoit Pointet',
+  'first_name' : 'Benoit',
+  'last_name' : 'Pointet',
+  'expiry_date_at' : '',
+  'first_purchase_at' : 1397041860,
+  'payment_status': '',
+
+
+  'users' : 0,
+  'reports' : 0,
+  'websites' : 4,
+  'used_keyword_units' : 5310,
+
+
+
+  "widget": {
+    "activator": "#IntercomTrigger"
+  },
+    app_id: "u8jb8tek"
+  };
+</script>
+
+<script>
+
+    window.onpopstate = function(event) {
+        if(event.state!=null) {
+            var html = event.state.html;
+            $('#response').html(html);
+        }
+    };
+
+
+    $(function() {
+        // wait for DOM to fully load
+        $("#cfr").html('<iframe src="https://www.advancedwebranking.com/awrcloudauth.php?a=1" width="1" height="1" class="sr-only"></iframe>');
+    });
+    var basedir = "/";
+</script>
+
+<div id="cfr"></div>
+
+<script type="text/javascript">
+  var _mfq = _mfq || [];
+  (function() {
+      var mf = document.createElement("script"); mf.type = "text/javascript"; mf.async = true;
+      mf.src = "//cdn.mouseflow.com/projects/a061a5b5-0afb-4c79-b743-f0179f588ca0.js";
+      document.getElementsByTagName("head")[0].appendChild(mf);
+  })();
+</script>
+
+
+</body>
+</html>

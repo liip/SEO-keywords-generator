@@ -1,0 +1,2411 @@
+
+<!doctype html>
+<html>
+<head>
+            <title>Liip AG</title>
+                <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+            <link rel="icon" href="">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1447061311">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/flick/jquery-ui.css">
+    <!--[if lt IE 9]>
+    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery fallback -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="/js/ajax_projects.js?v=1447061311"></script>
+            <script src="/js/res_en.js?v=1447061311"></script>
+        <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="/js/bootstrap/bootstrap.min.js?v=1447061311"></script>
+    <script src="/js/bootbox.min.js?v=1447061311"></script>
+    <script src="/js/common.js?v=1447061311"></script>
+    <script src="/js/bootstrap-datepicker.js?v=1447061311"></script>
+    <script src="/js/numeral.js?v=1447061311"></script>
+    <script src="/js/languages.js?v=1447061311"></script>
+    <script type="text/javascript">var basedir = "/";</script>
+    <script src="/js/research.js?v=1447061311"></script>
+
+    <script>
+      var awrcAjax = new XMLHttpRequest();
+      awrcAjax.open("GET", "/svg/symbols.svg", true);
+      awrcAjax.send();
+      awrcAjax.onload = function(e) {
+       var div = document.createElement("div");
+       div.innerHTML = awrcAjax.responseText;
+       document.body.insertBefore(div, document.body.childNodes[0]);
+      }
+    </script>
+</head>
+<body class="
+                          whitelabel
+                                                  body-dashboard
+
+            ">
+<script>
+    var _selected_filter_name = "";
+    var _selected_filter_id = -1;
+</script>
+
+
+        <!-- Google Tag Manager -->
+        <noscript>
+            <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KQPCLB"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <script>(function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+                var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                        '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-KQPCLB');</script>
+        <!-- End Google Tag Manager -->
+
+
+
+<script>
+    var is_research_mode = false;
+</script>
+
+
+
+
+<div class="top-navbar navbar-inverse">
+
+<button class="navbar-btn navbar-toggle">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+
+      <a href="/projects.php" id="home-logo" class="whitelabel
+    hidden-xs
+     active    pull-left" style="background-image: url(https://s3.amazonaws.com/awrcloud.client_folders/);">
+      <span class="svg-cover"></span>
+      <svg height="20" width="20">
+        <use xlink:href="#home"></use>
+      </svg>
+    </a>
+
+  <!-- If user is signed in and projects exists-->
+<script>
+    var report_domain = "";
+</script>
+
+<div class="flex-websites">
+  <form method="get" action="/projects.php" id="projectselector">
+
+
+
+
+          <input type="hidden" name="action" value="manageproject">
+    <input type="hidden" name="activetab" value="">
+    <input type="hidden" name="keyword" value="">
+    <input type="hidden" id="research_domain_id" name="domain" value="https://www.swissaid.ch/">
+
+    <input type="hidden" name="report_type" value="">
+    <input type="hidden" name="report_id" value="">
+        <input type="hidden" name="project_id" id="project_id" value="1">
+
+          </form>
+     </div>
+        <!-- If user is signed in -->
+            <ul class="nav pull-right">
+        <li class="dropdown pull-right">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="//gravatar.com/avatar/e2fd75356b4ca9c778e0c7f269a99a94?s=80&d=404&r=g" class="gravatar" width="16" height="16">
+                <b class="caret"></b>
+            </a>
+          <ul class="dropdown-menu" role="menu">
+            <li class="dropdown-header text-center">
+              <img src="//gravatar.com/avatar/e2fd75356b4ca9c778e0c7f269a99a94?s=80&d=404&r=g" class="gravatar" width="64" height="64">
+              <br>
+              <span class="text-muted text-none">Signed in as benoit.pointet@liip.ch</span>
+            </li>
+                        <li class="divider"></li>
+                          <li class="visible-xs">
+                                    <a href="http://www.advancedwebranking.com/online/docs/website-management.html" target="_blank">
+                        Website Management Help
+                    </a>
+                              </li>
+              <li class="visible-xs">
+                  <a href="http://www.advancedwebranking.com/online/docs/" target="_blank">
+                      Documentation
+                  </a>
+              </li>
+              <li class="visible-xs">
+                <a href="http://www.advancedwebranking.com/blog/category/awr-cloud-updates/" target="_blank">
+                  What's new
+                </a>
+              </li>
+              <li class="divider visible-xs"></li>
+                        <!-- If superuser -->
+                                              <li >
+                    <a href="/profile-plans.php">Upgrade</a>
+                  </li>
+
+                  <li>
+                      <a href="/payment_info_details.php" target="_awc_1447064650">Edit payment info</a>
+                  </li>
+                                                      <li >
+                    <a href="/invoices.php">Invoices</a>
+                  </li>
+                                                <!-- End if superuser -->
+            <li >
+              <a href="/profile.php">Account settings</a>
+            </li>
+            <!-- If not regular user -->
+                            <li class=""><a href="/users.php">Users</a></li>
+             <!-- End if not regular user -->
+                                    <li class="divider"></li>
+            <li><a href="/signout.php">Sign out</a></li>
+          </ul>
+        </li>
+
+                  <li class="dropdown pull-right hidden-xs">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <svg class="awrc-icon">
+                <use xlink:href="#help"/>
+              </svg>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li class="dropdown-header">Help</li>
+              <li class="divider"></li>
+              <li>
+                                        <a href="http://www.advancedwebranking.com/online/docs/website-management.html" target="_blank">
+                          Website Management Help
+                      </a>
+                                </li>
+              <li>
+                  <a href="http://www.advancedwebranking.com/online/docs/" target="_blank">
+                      Documentation
+                  </a>
+              </li>
+              <li>
+                <a href="http://www.advancedwebranking.com/blog/category/awr-cloud-updates/" target="_blank">
+                  What's new
+                </a>
+              </li>
+
+              <li class="divider"></li>
+              <li><a href="#" onclick="Intercom('show'); $('html').click()">Send us a message...</a></li>
+                                    </ul>
+          </li>
+
+
+
+
+
+      <script type="text/javascript">
+  var global_json;
+  var global_reports_no = -1;
+  var su_id = '59619167';
+  var output;
+  var websocket;
+  WEB_SOCKET_SWF_LOCATION = "websocket/flash/WebSocketMain.swf";
+  var flash = 0;
+  var events_groups_settings = {};
+  var show_all_groups = true;
+
+  updateEvents();
+
+  connect();
+
+  $(window).on('beforeunload', function(){
+    websocket.close();
+  });
+
+  function connect(){
+    var port = ":8182";//":8182";
+    var host = window.location.hostname ;
+    host = host.replace('www.','');
+
+    if(host != "awrcloud.com")
+    {
+      host = "ws://" + host + ":8183" +  "/";
+    }
+    else
+    {
+      host = "wss://" + host + port + "/";
+    }
+
+    //Find it browser supports WebSockets;
+    if ("WebSocket" in window){
+      websocket = new WebSocket(host);
+      websocket.onopen = onOpen;
+      websocket.onclose = onClose;
+      websocket.onmessage = onMessage;
+      websocket.onerror = onError;
+    } else {
+      //If there is no websocket support, we switch on flash websockets server;
+      port = "8182";
+      flash = 1;
+      websocket = new WebSocket(host);
+      websocket.onopen = flash_onOpen;
+      websocket.onclose = flash_onClose;
+      websocket.onmessage = flash_onMessage;
+      websocket.onerror = flash_onError;
+    }
+  }
+
+  function onOpen(evt){
+    websocket.send("suid|" + su_id);
+  }
+  function onClose(evt){
+  }
+  function onMessage(evt){
+    parse_message(evt.data);
+  }
+  function onError(evt){
+  }
+  function flash_onOpen(evt){
+    websocket.send("suid|" + su_id);
+  }
+  function flash_onClose(evt){
+  }
+  function flash_onMessage(evt){
+    parse_message(evt.data);
+  }
+  function flash_onError(evt){
+  }
+
+  function parse_message(message){
+    if(message.startsWith("suid"))
+    {
+      return;
+    }
+
+    var result = JSON.parse(message);
+
+    if(result['su_id']['su_id'] == su_id)
+    {
+      if(result['multi_events'] == true)
+      {
+        var new_items = 0;
+        for(var i=0; i < Object.keys(result['groups']).length; i++)
+        {
+          var group = Object.keys(result['groups'][i]);
+          var totals = result['groups'][i][group];
+
+          var current_value = $('#badge_' + group).attr('value');
+          current_value = parseInt(current_value);
+          $('#badge_' + group).attr('value', current_value + totals);
+          $('#badge_' + group).empty();
+          $('#badge_' + group).html(current_value + totals);
+          $('#badge_' + group).removeClass("hidden");
+
+          showAnimation('badge_' + group);
+          new_items = new_items + totals;
+        }
+
+        updateTotals(new_items, new_items + " new events available !" );
+      }
+      else
+      {
+        var parsed_group = result['group'];
+
+        var increment_value = 1;
+        var current_value = $('#badge_' + parsed_group).attr('value');
+        current_value = parseInt(current_value);
+
+        $('#badge_' + parsed_group).attr('value', current_value + increment_value);
+        $('#badge_' + parsed_group).empty();
+        $('#badge_' + parsed_group).html(current_value + increment_value);
+        $('#badge_' + parsed_group).removeClass("hidden");
+
+        showAnimation('badge_' + parsed_group);
+
+        var total_msg = "";
+        if(increment_value > 0)
+        {
+          if(increment_value == 1)
+          {
+            total_msg = result['message'];
+          }
+          else
+          {
+            total_msg = "New events available !";
+          }
+        }
+
+
+        updateTotals(increment_value, total_msg);
+      }
+    }
+  }
+
+  function updateTotals(new_items, message)
+  {
+
+    var current_total = $('#total_events').attr('value');
+    current_total = parseInt(current_total);
+
+    $('#total_events').attr('value', current_total + new_items);
+    $('#total_events').html(current_total + new_items);
+
+    $('#total_events_inside').html(current_total + new_items + " new");
+    showAnimation('total_events');
+
+    showNotificationsTooltip( message);
+  }
+
+  function showAnimation(aID)
+  {
+    $('#' + aID).addClass('wobble');
+    setTimeout(function() {
+      $('#' + aID).removeClass('wobble')
+    }, 500);
+  }
+
+  function updateEvents() {
+
+    $.ajax({
+      url: '/events_dropdown.php?hash='+CryptoJS.MD5(global_json),
+      dataType: 'text',
+      success: function(data) {
+
+
+        var result = JSON.parse(data);
+
+        //Get events settings:
+        for(var i=0; i < result['settings'].length; i++)
+        {
+          events_groups_settings[result['settings'][i]['key']] = result['settings'][i]['value'];
+        }
+
+        show_all_groups = result['show_all_groups'];
+        if(result['show_all_groups'] == false)
+        {
+            $('#see_all').addClass("hidden");
+        }
+        else
+        {
+            $('#see_all').removeClass("hidden");
+        }
+
+
+        if(result['total'] > 0)
+        {
+          $('#total_events').html(result['total']);
+        }
+        else
+        {
+          $('#total_events').html("");
+        }
+
+        $('#total_events').attr('value', result['total']);
+
+        if(result['total'] > 0)
+        {
+          $('#total_events_inside').html(result['total'] + " new");
+        }
+        else
+        {
+          $('#total_events_inside').html("");
+        }
+
+        $('#events_ul').empty();
+
+
+        for(var i=0; i < result['order'].length; i++)
+        {
+          var index = result['order'][i];
+          var id = result['groups'][index]['id'];
+          var name = result['groups'][index]['name'];
+          var value = result['groups'][index]['value'];
+          var color = result['groups'][index]['color'];
+          injectEventsGroup(id, name, color, value);
+
+
+          if(events_groups_settings[id] == 0 || (typeof events_groups_settings[id] === 'undefined' && result['show_all_groups'] == false) )
+          {
+            $('#events_li_'+ id).remove();
+          }
+
+        }
+      }
+    });
+  }
+
+  function injectEventsGroup(aID, aName, aBackground, aNumber)
+  {
+
+    var toAppend = "<li id='events_li_" + aID + "'>";
+    toAppend += "<a href='events.php?selected_group=" + aID + "'>";
+
+    toAppend += "<span value='" + aNumber + "' id='badge_" + aID + "' class='" + (aNumber > 0 ? "" : "hidden") + " pull-right badge' style='background-color: " + aBackground + "'>";
+    toAppend += aNumber;
+    toAppend += "</span>";
+    toAppend += aName;
+
+    toAppend += "</a>";
+    toAppend += "</li>";
+
+    $('#events_ul').append(toAppend);
+  }
+
+</script>
+
+<li class="dropdown pull-right" id="notif_drop">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    <svg class="awrc-icon">
+      <use xlink:href="#bell"/>
+    </svg>
+    <sup class="badge badge--danger" value="0" id="total_events"></sup>
+    <b class="caret"></b>
+  </a>
+  <div class="dropdown-menu" role="menu">
+    <ul class="list-unstyled">
+      <li class="dropdown-header">
+        <span class="pull-right" value="0" id="total_events_inside"></span>
+        <span class="dropdown-header__text">Events</span>
+      </li>
+      <li class="divider"></li>
+    </ul>
+    <ul class="list-unstyled scrollable" id="events_ul">
+
+    </ul>
+    <ul class="list-unstyled" id="see_all">
+      <li class="divider"></li>
+      <li><a href="/events.php?project_id=1">See all events</a></li>
+    </ul>
+  </div>
+</li>
+
+    </ul>
+     <!-- End if user is signed in -->
+    <!-- If user is NOT signed in -->
+    <!-- End if user is NOT signed in -->
+  </div>
+
+<div class="main-navbar">
+
+    <ul class="main-navbar-menu">
+
+                  <li class="visible-xs  active">
+            <a href="/projects.php">
+              <svg height="45" width="45">
+                <use xlink:href="#home"></use>
+              </svg>
+              <span>Home</span>
+            </a>
+          </li>
+
+
+
+      <li class="dropdown ">
+        <a href="/overview_organic.php?project_id=1" class="dropdown-toggle" data-toggle="dropdown" onclick="$('.loading-overlay').show();window.location=this.href;">
+          <svg height="45" width="45">
+            <use xlink:href="#ranking"></use>
+          </svg>
+          <span>Rankings</span>
+         </a>
+        <ul class="dropdown-menu">
+
+                <li >
+                    <a href="/overview_organic.php?project_id=1">
+                        Overview
+                    </a>
+                </li>
+                <li ><a href="/reports_overview_ranking.php?project_id=1">Search Engine Comparison</a></li>
+                <li ><a href="/reports_seoverview_ranking.php?project_id=1">Website Comparison</a></li>
+
+                <li ><a href="/visibility.php?project_id=1">Visibility</a></li>
+                <li ><a href="/reports_website_ranking.php?project_id=1">Website Ranking</a></li>
+                <li ><a href="/reports_keyword_ranking.php?project_id=1">Keyword Ranking</a></li>
+
+                <li ><a href="/reports_keywordgroups.php?project_id=1">Keyword Groups</a></li>
+                <li ><a href="/reports_clickshare.php?project_id=1">Click Share</a></li>
+
+        </ul>
+      </li>
+
+      <li class="dropdown ">
+          <a href="/social.php" class="dropdown-toggle" data-toggle="dropdown" onclick="$('.loading-overlay').show();window.location=this.href;">
+            <svg height="45" width="45">
+              <use xlink:href="#social"></use>
+            </svg>
+            <span>Social</span>
+          </a>
+          <ul class="dropdown-menu">
+              <li >
+                  <a href="/social.php">Overview</a>
+              </li>
+              <li >
+                  <a href="/twitter.php">Twitter</a>
+              </li>
+              <li >
+                  <a href="/facebook.php">Facebook</a>
+              </li>
+
+          </ul>
+      </li>
+
+
+
+                  <li class="dropdown ">
+              <a href="/reports.php" onclick="$('.loading-overlay').show();window.location=this.href;" class="dropdown-toggle" data-toggle="dropdown">
+                <svg height="45" width="45">
+                  <use xlink:href="#reports"></use>
+                </svg>
+                <span>Reports</span>
+              </a>
+                            <ul class="dropdown-menu">
+                  <li >
+                    <a href="/reports.php">Overview</a>
+                  </li>
+                                        <li >
+                        <a href="/newreportmanager.php?project_id=1">Master Reports</a>
+                      </li>
+
+                                        <li >
+                        <a href="/newtemplatesmanager.php?project_id=1">Templates</a>
+                      </li>
+                                </ul>
+          </li>
+
+
+            <li class="dropdown ">
+
+                <a href="/research/dashboard.php?domain=&href=1" onclick="$('.loading-overlay').show();window.location=this.href;" class="dropdown-toggle" data-toggle="dropdown">
+                    <svg height="45" width="45">
+                      <use xlink:href="#research"></use>
+                    </svg>
+                    <span>
+                      Research
+                      <small class="label label-warning pos-top-right beta">
+                        beta
+                      </small>
+                    </span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="">
+                    <a href="/research/dashboard.php?domain=&href=1">
+                      Overview
+                    </a>
+                  </li>
+                    <li class="">
+                        <a href="/research/organic/rankings.php?domain=&href=1">
+                            Organic
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/research/paid/rankings.php?domain=&href=1">
+                            Paid
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="/research/keywords/keywords.php?domain=">
+                            Keywords
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/research/competitors-intersection.php?domain=&website1=&href=1">
+                            Common Keywords
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+
+                  <li class="dropdown ">
+                <a href="/website-auditor.php" onclick="$('.loading-overlay').show();window.location=this.href;" class="dropdown-toggle" data-toggle="dropdown">
+                  <svg height="45" width="45">
+                    <use xlink:href="#playground"></use>
+                  </svg>
+                  <span>Playground</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="">
+                        <a href="/website-auditor.php?project_id=1">
+                            <span>Auditor</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/gwt_import.php?project_id=1">
+                            Google Webmaster Tools
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/variations.php">
+                            Google Algorithm Changes
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/features-spread.php">
+                            Google SERP Features
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+
+
+
+            <li class="dropdown ">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="/projects.php?action=manageproject&activetab=keywords" onclick="$('.loading-overlay').show();window.location=this.href;" >
+                  <svg height="45" width="45">
+                    <use xlink:href="#settings"></use>
+                  </svg>
+                  <span>Settings</span>
+                </a>
+        <ul class="dropdown-menu">
+                    <li >
+                        <a href="/projects.php?action=manageproject&activetab=websitesettings">*.liip.ch settings</a>
+                    </li>
+                    <li >
+                        <a href="/profile.php">Account settings</a>
+                    </li>
+                </ul>
+            </li>
+
+      </ul>
+
+
+        <!-- Show plan info only for the right users -->
+                    <!-- If quota exceeded -->
+                                                                                    <!-- End if quota exceeded -->
+
+            <!-- If trial in progress & quota not exceeded-->
+                        <!-- End trial progress -->
+
+            <!-- Display KW units -->
+
+
+                <a href="/projects.php?mode=resources" class="plan-status visible-sm visible-md visible-lg white-link">
+                  <h5 class="plan-status__title plan-status_hidden">
+                    <small>
+                      Your Pro plan resources
+                    </small>
+                  </h5>
+                  <span class="progress auto-width" style="display: block">
+
+                    <span class="progress-bar progress-bar-warning" style="width: 75%;"></span>
+                    <span class="progress-bar progress-bar-success" style="width: 25%;"></span>
+                  </span>
+                  <span class="row plan-status_hidden">
+                    <span class="col-sm-6">
+                      <span class='label label-warning label-1em'>Consumed  75%</span>
+                    </span>
+                    <span class="col-sm-6">
+                      <span class='label label-success label-1em'>Remaining  25%</span>
+                    </span>
+                  </span>
+                </a>
+                        <!-- Display KW units -->
+
+                <!-- End of plan info  -->
+
+</div>
+
+<script type="text/javascript">
+  //set display status for getting started
+  var js_completion_display = "1";
+
+  function changeClientType(checked_element, unchecked_element)
+  {
+    $('#'+checked_element).prop('checked', true);
+    $('#'+unchecked_element).prop('checked', false);
+  }
+
+  function disableInput(to_enable, to_disable)
+  {
+    $('#'+to_enable).prop('disabled', false);
+    $('#'+to_disable).prop('disabled', true);
+  }
+
+  function validateEmail()
+  {
+    var custom_email = "";
+    if($("#enable_email").is(":checked"))
+    {
+      user_id = -2;
+      custom_email = $("#user_email").val();
+      if(custom_email.length==0)
+      {
+        bootbox.alert(getResStr("specify_email"));
+        return;
+      }
+
+      //Validate email:
+      var invalid_emails = new Array();
+      var emails = custom_email.split(",");
+      for (var i=0;i<emails.length;i++)
+      {
+        if(emails[i].indexOf("@") == -1 && emails[i].length > 0)
+        invalid_emails.push(emails[i]);
+      }
+
+      if(invalid_emails.length != 0){
+      bootbox.alert("<div style=\"width: 100%;word-wrap: break-word;table-layout: fixed;\">" + getResStr("invalid_emails") + invalid_emails + "</div>");
+      return;
+      }
+
+      if(custom_email.indexOf(",", custom_email.length - 1) !== -1)
+      {
+        custom_email = custom_email.replace(/,$/, "");
+      }
+    }
+
+    if($('#quick_report_name').val() == "Report Preview")
+      bootbox.alert("Invalid report name");
+    else{
+      var returned = generateQuickReport();
+      if(returned != 'alert'){
+        toggle_quick_report('', '');
+        //toggle_quick_report(current_quota, plan_quota);
+      }
+    }
+
+  }
+</script>
+    <!-- NEW ADD SEARCH ENGINES FORM -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places&language=en-US"></script>
+<script src='js/locations_validator_class.js'></script>
+<script src="js/load-countries.js"></script>
+<script>
+function checkSES() {
+    var sel_country = $('#nselected_country').val();
+    var sel_segroup = $('input:hidden[name=nsegroupid]').val();
+    if(customSection == 'local') $('#se_location_type').val('custom');
+    var sesstring = '';
+    var ses = '';
+    var addedses = new Array();
+    var allowadd = false;
+        addedses.push();
+    ses = ses + '  ';
+
+        if(sel_country!='' && sel_segroup==1) allowadd=true;
+        var selectedSes = new Array();
+        $('.selectedsesclass:checked').each(function () {
+                selectedSes.push($(this).val());
+                sesstring = sesstring + ' ' + $(this).val();
+                if(ses.indexOf(' '+ $(this).val()+' ') <0 ) allowadd = true;
+        });
+    if(!allowadd) bootbox.alert('Please select some search engines first');
+    else $('#nsearchenginesform').submit();
+}
+
+
+
+
+
+
+    function loadSEsForCountry(country_location, country_description)
+    {
+        $('#nadd_searchengines_form').load('nget_segroups_form.php?prefix=&selected_country='+country_location+'&adjustment_path='+''+'&selection=&selected_se_group=&customSection=');
+        $('#selected_country_name').html('<img src=\'https://s3.amazonaws.com/caph.awronline/resources/flags/' + country_location.toLowerCase() +'.gif\'> ' + country_description);
+        $('#nselected_country').val(country_location);
+        $('#country_dropdown.dropdown-toggle').dropdown('toggle');
+        return false;
+    }
+</script>
+<form method="post" action="projects.php" id="nsearchenginesform" name="nsearchenginesform">
+    <input type="hidden" name="action" value="nperform_addsearchengines">
+    <input type="hidden" name="project_id" value="1">
+    <input type="hidden" name="mode" value="">
+    <input type="hidden" id="map-canvas">
+    <input type="hidden" name="activetab" value="searchengines">
+    <input type="hidden" name="nsegroupid" id="nsegroupid" value="">
+    <input type="hidden" name="nselected_country" id="nselected_country" value="CH">
+    <div class="modal fade" id="nadd_searchengines">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3>Add search engines</h3>
+                </div>
+                <div class="modal-body">
+
+                    <br>
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="nselected_country" class="control-label col-md-3 left-inline">
+                                Country
+                            </label>
+                            <div class="col-md-9">
+                                <div class="btn-group">
+                                    <button class="btn btn-default dropdown-toggle" id="country_dropdown" data-toggle="dropdown">
+                                        <span id="selected_country_name"><img src="https://s3.amazonaws.com/caph.awronline/resources/flags/ch.gif"> Switzerland</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <div class="dropdown-menu" role="menu">
+                                        <ul class="list-unstyled">
+                                            <li><input class="dropdown-input form-control" id="cntr_txt_search_field" type="text" value="" placeholder="Search countries" onkeyup="searchList('cntr_txt_search_field', 'cntr-searchable', 'cntr-no-match')" onclick="event.stopPropagation();return false" autofocus></li>
+                                            <li class="divider"></li>
+                                        </ul>
+                                        <ul class="list-unstyled scrollable" data-loaded="0" id="cntr_ul">
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div id="nadd_searchengines_form"></div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <a class="btn btn-default btn-primary" id="ses_add_button" onclick="checkSES();" >
+                        Add search engine
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- EDIT GROUP FORM -->
+<div class="modal fade" id="edit_group">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3>Edit Group</h3>
+            </div>
+
+            <form method="post" action="projects.php" id="editgroupform" name="editgroupform">
+                <input type="hidden" name="action" value="edit_group_name">
+                <input type="hidden" name="fromkwgroups" value="0">
+                <input type="hidden" name="project_id" value="1">
+                <input type="hidden" name="group_id" id="gr_id_field" value="">
+                <div class="modal-body">
+                    <label for="group_name">Group Name:</label>
+                    <input type="text" class="form-control" name="group_name" id="group_name" maxlength="30">
+                </div>
+                <div class="modal-footer">
+                  <a href="#" onclick="delete_group(1,$('#gr_id_field').val());" class="btn btn-danger-hover">
+                    Delete group
+                  </a>
+                  or
+                  <input type="submit" class="btn btn-default btn-success" value="Update group" onclick="if($('#group_name').val().length == 0){ bootbox.alert('Keyword group name cannot be empty!'); return false;} ">
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- ADD KEYWORDS FORM -->
+<div class="modal fade" id="add_keywords">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3>Add Keywords</h3>
+            </div>
+
+            <form method="post" action="projects.php" id="keywordsform" name="keywordsform">
+                <input type="hidden" name="action" value="perform_addkeywords">
+                <input type="hidden" name="fromkwsmanage" value="1">
+                <input type="hidden" name="project_id" value="1">
+                <input type="hidden" name="updatefrequency">
+                <input type="hidden" name="new_project" value="">
+                <div class="modal-body">
+                    <label for="keywords">Keywords (one per line)</label>
+                    <textarea name="keywords" id="keywords" class="form-control" placeholder="keywords..." cols="30" rows="7"></textarea>
+
+                    <div class="checkbox">
+                        <label for="mark_branded">Mark these keywords as branded</label>
+                        <input type="checkbox" name="mark_branded" id="mark_branded">
+                    </div>
+
+                    <label for="group_id">Assign keywords to the following group:</label>
+                    <select class="form-control" name="group_id" id="group_id" onChange="showAddToNewGroup(this);">
+                        <option value="-3" selected>None</option>
+                        <option value="-1">New Group</option>
+                                                                                                                        </select>
+
+                    <div id="add_to_new_group" class="hidden">
+                        <br>
+                        <label for="new_group">Enter the name of the keyword group:</label>
+                        <input class="form-control" type="text" name="new_group" id="new_group" placeholder="Group Name...">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a id="add-your-keywords" class="btn btn-default btn-primary disabled" onclick="$(this).text('Adding keywords...').addClass('disabled'); if(validateKeywords()) validateResources();">
+                        Add
+                    </a>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script>
+    // Make sure there is at least a keyword
+    $("textarea#keywords").bind('input propertychange', function(){
+      if ($(this).val().trim() != '') {
+        $('#add-your-keywords').removeClass('disabled');
+      } else
+            $('#add-your-keywords').addClass('disabled');
+    });
+
+    function validateKeywords() {
+        $('input:hidden[name=updatefrequency]').val('');
+        var kwtextarea= $('textarea[id=keywords]').val().trim();
+        if (kwtextarea.length == 0)
+            return false;
+
+        var KeywordsArray = kwtextarea.split('\n');
+        var kwunits= KeywordsArray.length*(1.5);
+        var remaining_kwunits= 1690;
+        for (var i = 0; i < KeywordsArray.length; i++) {
+            var kw= KeywordsArray[i].trim();
+            var kwcommas=kw.split(",");
+            if(kwcommas.length>3) {
+                var msg = getResStr("invalid_kw", kw);
+                bootbox.alert(msg);
+                i=KeywordsArray.length;
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function validateResources() {
+
+
+        $('input:hidden[name=updatefrequency]').val('');
+        var kwtextarea= $('textarea[id=keywords]').val();
+        var KeywordsArray = kwtextarea.split('\n');
+        var frequency_factor = 0.5;
+        var project_frequency= -3;
+        if(project_frequency==-2) frequency_factor=0;
+        var kwunits= KeywordsArray.length*(3*frequency_factor);
+        var remaining_kwunits=1690;
+
+
+        if(kwunits>remaining_kwunits) {
+            $('#add_keywords').modal('hide');
+            var msg = getResStr("warn_exceed_quota", KeywordsArray.length);
+            bootbox.alert(msg);
+            $('#add-your-keywords').text('Add').removeClass('disabled');
+        }
+        else {
+            //Submit using ajax
+            var post_form = $.post("projects.php", $("#keywordsform").serialize());
+            post_form.done(function(data) {
+                $("#add_keywords").modal("hide");
+                bootbox.alert("<h2>Information</h2><br><br>" +data, function() {
+                    $(".loading-overlay").show();
+                    window.location.reload();
+                } );
+
+            });
+
+        }
+
+    }
+    function showAddToNewGroup(sel){
+        if(sel.options[sel.selectedIndex].value==-1)
+            $("#add_to_new_group").removeClass( "hidden" );
+        else
+            $("#add_to_new_group").addClass( "hidden" );
+    }
+
+</script>
+
+    <!-- ADD COMPETITORS FORM -->
+<div class="modal fade" id="add_competitors">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3>Add competitors</h3>
+            </div>
+
+            <form method="post" action="projects.php" id="competitorsform" name="competitorsform" >
+                <input type="hidden" name="action" value="perform_addcompetitors">
+                <input type="hidden" name="project_id" value="1">
+                <input type="hidden" name="customer_plan_type" id="customer_plan_type" value="7">
+                <input type="hidden" name="project_competitors_count" value="33">
+                <div class="modal-body">
+                    <label for="add_competitors_form">Competitors (one per line)</label>
+                    <textarea name="competitors" class="form-control" id="add_competitors_form" placeholder="mycompetitor.com" cols="30" rows="7"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <a id="add-your-competitors"  href="#" class="btn btn-default btn-primary disabled" onclick="validateCompetitors();">Add</a>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</form>
+<script>
+    // Make sure there is at least a competitor
+    $("textarea#add_competitors_form").bind('input propertychange', function(){
+      if ($(this).val().trim() != '') {
+        $('#add-your-competitors').removeClass('disabled');
+      } else
+            $('#add-your-competitors').addClass('disabled');
+    });
+
+
+
+    function validateCompetitors() {
+        var CompetitorsTextarea= $('textarea[name=competitors]').val().trim();
+        if (CompetitorsTextarea.length == 0)
+            return false;
+        var CompetitorsCount= $('input:hidden[name=project_competitors_count]').val();
+        var CustomerPlanType= $('#customer_plan_type').val();
+        var limit = 50;
+        if(CustomerPlanType==0) limit = 1;
+
+        var CompetitorsArray = CompetitorsTextarea.split('\n');
+        var FutureCompetitorsCount = parseInt(CompetitorsArray.length) + parseInt(CompetitorsCount);
+        if (FutureCompetitorsCount <= limit)
+        {
+            $("#add-your-competitors").text('Adding competitors...').addClass('disabled');
+            $.ajax({
+                type: "GET",
+                url: "projects.php?" + $('#competitorsform').serialize()
+            }).done(function( data ) {
+                if (data != '')
+                {
+                    bootbox.alert(data, function() {
+                        window.location.reload();
+                    } );
+                }
+                else {
+                    window.location.reload();
+                }
+
+            });
+        }
+        else
+        {
+            bootbox.alert("You're trying to add too many competitors. Maximum " + limit + " competitors allowed for a project.");
+
+        }
+        return false;
+    }
+
+</script>
+
+
+
+<script>
+        var allow_add = true;
+    </script>
+
+<div class="container-main">
+    <div class="loading-overlay">
+        <div class="loading-indicator"></div>
+    </div>
+
+<div class="getting-started  hidden"  onclick="window.location = '/getting-started.php'" style="cursor: pointer" >
+
+
+
+        <h4>Getting started</h4>
+        <button type="button" class="close gs-close" title="Do not show this anymore." onclick="setCompletions(1, 0); showCompletionsTooltip();">
+          &times;
+        </button>
+                  <p>
+            Yay, you have completed 5 out of 6 tasks already!
+          </p>
+
+  <div id="progress-bar">
+    <ol id="progress-steps">
+        <li class="progress-step">
+            <span class="count highlight-index"></span>
+        </li>
+      <li class="progress-step">
+        <span class="count highlight-index"></span>
+      </li>
+      <li class="progress-step">
+        <span class="count highlight-index"></span>
+      </li>
+      <li class="progress-step">
+        <span class="count highlight-index"></span>
+      </li>
+      <li class="progress-step">
+        <span class="count highlight-index"></span>
+      </li>
+      <li class="progress-step">
+        <span class="count "></span>
+      </li>
+    </ol>
+  </div>
+</div><script src="/js/project_commons.js?v=1447061311"></script>
+
+
+
+
+
+    <script src="/js/jquery.sparkline.js?v=1447061311"></script>
+
+<script src="/js/projects.js?v=1447061311"></script>
+
+
+
+<!-- UPDATE NOW WEBSITE RANKINGS -->
+<div class="modal fade" id="update_now">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3>One time update</h3>
+      </div>
+
+      <form method="post" id="updrankingsform" name="updrankingsform" action="projects.php" >
+        <input type="hidden" name="action" value="perform_upd">
+        <input type="hidden" name="sorttype" id="sorttype" value="domain">
+        <input type="hidden" name="sortdir" id="sortdir" value="asc">
+        <input type="hidden" name="ondemand_project_filter" id="ondemand_project_filter" value="">
+
+        <input type="hidden" name="updated_project_speed" id="updated_project_speed" value="">
+        <input type="hidden" name="updated_project_id" id="updated_project_id" value="">
+        <input type="hidden" name="ondemand_fast_update_allowed" id="ondemand_fast_update_allowed" value="">
+        <input type="hidden" name="ondemand_slow_update_allowed" id="ondemand_slow_update_allowed" value="">
+        <input type="hidden" name="static_projected_resources_remaining" id="static_projected_resources_remaining" value="">
+          <div class="modal-body">
+            <div id="update_speed_div">
+
+            <br><br>
+            <div>
+              <div class="row row-responsive-centered">
+
+                <div id="fast_update_div" class="col-md-6" onclick="if($('#ondemand_fast_update_allowed').val()=='yes') { $('#resources_limit_notification').html('<p><small class=\'label label-info\'>Fast updates are limited to 5000 keyword units per day</small></p>');$('#projected_resources_remaining').html( Math.round(parseInt($('#static_projected_resources_remaining').val()) - $('#fast_resources_consumption').html()) );$('input:hidden[id=updated_project_speed]').val('fast');$('#fast_update_label').addClass('active');$('#slow_update_label').removeClass('active');  } else bootbox.alert('Performing a fast update would exceed the limit of 5000 keyword units allowed per day for fast on-demand updates. Please use the slow update instead.');">
+                  <div id="fast_update_label" class="btn btn-block btn-lg btn-default">
+                    <p class="h2">Fast</p>
+                    <p><small class="label label-success"><i class="icon-time"></i> up to 24 hours</small></p>
+                    <p><small class="label label-danger"><i class="icon-tasks"></i> <span id="fast_resources_consumption">15</span> weekly keyword units</small></p>
+                  </div>
+                </div>
+                <div id="slow_update_div" class="col-md-6" onclick="if($('#ondemand_slow_update_allowed').val()=='yes') { $('#projected_resources_remaining').html( Math.round(parseInt($('#static_projected_resources_remaining').val()) - $('#slow_resources_consumption').html()) ); $('#resources_limit_notification').html('<p><small class=\'label label-info\'>Slow updates are limited to 1750 keyword units per week</small></p>');$('input:hidden[id=updated_project_speed]').val('slow');$('#fast_update_label').removeClass('active');$('#slow_update_label').addClass('active'); } else bootbox.alert('Performing a slow update would exceed the limit of 1750 keyword units allowed per week for slow on-demand updates. Please use the fast update if available.');">
+                  <div id="slow_update_label" class="btn btn-block btn-lg btn-default">
+                     <p class="h2">Slow</p>
+                      <p><small class="label label-danger"><i class="icon-time"></i> up to 7 days</small></p>
+
+                      <p><small class="label label-success"><i class="icon-tasks"></i> <span id="slow_resources_consumption">7</span> weekly keyword units</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br>
+
+            <div class="well centered">Remaining weekly keyword units:
+              <strong><span id="projected_resources_remaining"></span></strong><BR>
+              <span id="resources_limit_notification"><p><small class='label label-info'>Fast updates are limited to 5000 keyword units per day</small></p></span>
+              <small>*The weekly keyword units spent for on-demand updates<BR>are only reimbursed at the beginning of the next billing month.</small>
+            </div>
+
+            </div>
+            <div id="update_speed_text">
+              Update speed explanation
+            </div>
+            <div id="on_demand_update_submit_trial" class="hidden">
+                <div class="alert alert-warning">
+                    Trial accounts cannot run on-demand updates.
+                </div>
+            </div>
+            <div id="on_demand_update_submit_nores" class="hidden">
+                <div class="alert alert-warning">
+                    You do not have enough keyword units left to start an on demand update.
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="submit" class="btn btn-default btn-primary" id="on_demand_update_submit" value="Update now">
+          </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script type="text/javascript">
+    var isHoveringEdit = false;
+    var sortingType = "domain";
+    var sortingDir = "asc";
+    var prjFilter = "";
+
+
+    function delete_tag(tag_id){
+        $('#edit_tag').modal('hide');
+        tag_id = parseInt(tag_id);
+        confirm(getResStr("confirm_delete_tag"), getResStr("no"), getResStr("yes"), function(confirmed) {
+            if (confirmed)
+            {
+                $.ajax({
+                    type: "POST",
+                    url: "projects.php?action=delete_tag",
+                    data: {tag_id : tag_id}
+                }).done(function( msg ) {
+                    if (msg == 'OK'){
+                        //location.reload();
+                        var sel_id = '';
+                        if(sel_id>0 && sel_id!=tag_id){
+                            window.location='projects.php?sorttype=domain&project_filter=&sortdir=asc&tag_filter=';
+                        }else{
+                            window.location='projects.php?sorttype=domain&project_filter=&sortdir=asc';
+                        }
+                    }
+                    else
+                        bootbox.alert(msg);
+                });
+            }
+
+        });
+    }
+
+</script>
+<script type="text/javascript" src="js/projects_menu.js"></script>
+
+	<div class="page-header-block row-responsive-centered row">
+		<div class="col-xs-6">
+
+                            <h1 class="page-header-title">
+                    Websites
+                </h1>
+                		</div>
+                    <div class="col-xs-6 right-inline">
+                <a id="sel_add_new_project" class="btn btn-success" href="newproject.php">Add website</a>
+            </div>
+                	</div>
+
+
+
+
+
+
+
+
+
+
+<div class="table-responsive">
+<table class="table table-striped  table-sortable table-sticky-header">
+<thead>
+    <tr>
+        <td colspan="100" class="filter-header-cell">
+    <div class="row row-responsive-left filter-header filter-header-table">
+        <div class="col-md-12">
+
+            <div class="dropdown btn-group">
+                <button type="button" data-toggle="dropdown" class="dropdown-toggle btn btn-default">
+                    <i class="icon-list"></i>
+                </button>
+
+                <div class="dropdown-menu">
+                    <ul class="list-unstyled">
+                        <li class="dropdown-header">
+                            Display mode:
+                        </li>
+                        <li class="divider"></li>
+                        <li class="active">
+                            <a href="/projects.php?view_mode=compact&perpage=10">Compact</a>
+                        </li>
+                        <li  >
+                            <a href="/projects.php?view_mode=comfortable&perpage=10">Comfortable</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dropdown btn-group">
+                <a href="#" class="dropdown-toggle btn btn-default " data-toggle="dropdown" id="filter-tags">
+                                            View all
+                                        <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu" id="actions_dropdown" role="menu">
+                    <li  class="active"><a href="#" onclick="window.location='projects.php?sorttype=domain&project_filter=&sortdir=asc';">View all</a></li>
+                    <li class="divider"></li>
+                    <li id="sel_active_button"  title="Projects using update scheduler"><a href="#"  onclick="window.location='projects.php?sorttype=domain&project_filter=&sortdir=asc&tag_filter=-1';">Scheduled</a></li>
+                    <li id="sel_inactive_button"  title="Projects using on-demand updates"><a href="#" onclick="window.location='projects.php?sorttype=domain&project_filter=&sortdir=asc&tag_filter=-2';">On Demand</a></li>
+                                    </ul>
+            </div>
+
+                            <div class="clear-input-wrapper ">
+                    <div class="close text-center" title="Clear selection"
+                          onclick="$('#project_filter').val('')" >
+                        &times;
+                    </div>
+                    <input type="text" autocomplete="off" id="project_filter" data-provide="typeahead" placeholder="find websites..." value="" onkeydown="if(enterKeyPressed(event)) window.location='projects.php?sorttype=domain&sortdir=asc&tag_filter=&project_filter='+encodeURIComponent(this.value);" class="form-control">
+                </div>
+
+                                                <div id="delete_selected_" class="dropdown btn-group">
+                        <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" id="tag_actions">
+                            Manage
+                            <span id="tag_badge" class="badge hidden"></span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" id="actions_dropdown" role="menu">
+                                                                                    <li><a href="#" onclick="_projects_tag(-1);">Add new tag</a></li>
+                                                        <li>
+                                <a href="#" onclick="_projects_delete();">Delete Websites</a>
+                            </li>
+                        </ul>
+                    </div>
+                                    </div>
+    </div>
+</td>
+    </tr>
+
+
+    <tr>
+                    <th id="delete_header" style="width: 35px">
+                <span id="sel-all-header" class="check-column">
+                    <span href="#" style="cursor:pointer" class="icon-check-empty icon-large" onclick='allSelectSelection();checkSelectionMarks()'></span>
+                </span>
+                <span id="sel-none-header" style="cursor:pointer" class="hidden">
+                    <span href="#" class="icon-check icon-large" onclick='clearSelectSelection();checkSelectionMarks()'></span>
+                </span>
+            </th>
+                <th class="sortable sorted-up small" onclick="window.location='projects.php?sorttype=domain&project_filter=&sortdir=desc&tag_filter=';">
+            Website
+        </th>
+
+                <th class="hidden-md hidden-sm hidden-xs text-center">
+            Trends
+        </th>
+
+        <th class="small text-center sortable" onclick="window.location='projects.php?sorttype=visibility&project_filter=&sortdir=asc&tag_filter=';">
+                         Visibility
+        </th>
+
+        <th class="hidden-md hidden-sm hidden-xs small text-center sortable" onclick="if(!cancelSortBy) window.location='projects.php?sorttype=changes&project_filter=&sortdir=asc&tag_filter=';">
+
+             Changes            <a href="/profile.php">
+                <i class="icon-info-sign black-link" data-toggle="tooltip" data-placement="auto top" data-container="body" title="Showing only changes higher than 1"></i>
+            </a>
+        </th>
+
+        <th class="small text-center sortable" onclick="window.location='projects.php?sorttype=frequency&project_filter=&sortdir=asc&tag_filter=';">
+
+             Freq. / Update
+        </th>
+    </tr>
+</thead>
+<tbody style="background-color: #fff">
+    <tr>
+            <td onclick="_select(1);" class="check-column">
+            <span id="deleteLink1"><i style="cursor:pointer" id="deleteIcon1" class="row-select icon-check-empty icon-large"></i></span>
+            <script type="text/javascript">delete_items.push(1);</script>
+        </td>
+        <td >
+
+        <a href="visibility.php?project_id=1"
+            class="  h4"
+            data-toggle="tooltip"
+            data-placement="top"
+            data-html="true"
+            data-template="<div class='tooltip' role='tooltip'><div class='tooltip-arrow'></div><div class='tooltip-inner tooltip-inner-lg'></div></div>"
+            title="<h5>liip.ch<h5>">
+            <strong>*.liip.ch</strong>
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <a  class="  h4" href="projects.php?action=manageproject&activetab=websitesettings&project_id=1"
+                data-toggle="tooltip"
+                data-placement="right"
+                data-container="body"
+                data-html="true"
+                data-template="<div class='tooltip' role='tooltip'><div class='tooltip-arrow'></div><div class='tooltip-inner tooltip-inner-lg left-inline'></div></div>"
+                title="
+                <h4>Edit settings</h4>
+                <ul class='list-unstyled'>
+                    <li>&bull; 2524 keywords</li>
+                    <li>&bull; 5 pages</li>
+                    <li>&bull; 3 search engines</li>
+                    <li>&bull; <span class='text-muted'>Last updated:</span>
+                                                    5 days ago
+                                            </li>
+                    <li>&bull; <span class='text-muted'>Update frequency:</span>
+                        biweekly
+                    </li>
+                    <li>&bull; <span class='text-muted'>Next update:</span>
+                        Next week
+                    </li>
+                </ul>">
+                <i class="icon-cog"></i>
+            </a>
+
+        <br>
+
+        <small title="Nov 4, 2015">
+            <span class="text-muted">Last updated:</span>
+                            5 days ago
+                    </small>
+
+        /
+
+        <small>
+            <span class="text-muted">Next update:</span>
+            <span title="Nov 18, 2015">Next week</span>
+        </small>
+        <br>
+
+        <small>
+            <span class="text-muted">
+                <span title="Pages">Depth</span> / <span title="Search engines">SEs</span> / <span title="Keywords">KWs:</span>
+            </span>
+                            <a href="projects.php?action=manageproject&activetab=websitesettings&project_id=1" title="AWR Cloud will retrieve only the first 5 pages from the search engine">5 pages</a>,
+
+                            <a href="projects.php?action=manageproject&activetab=searchengines&project_id=1">3 SEs</a>,
+
+
+                            <a href="projects.php?action=manageproject&activetab=keywords&project_id=1">2524 KWs</a>
+
+                    </small>
+        <br>
+
+
+
+
+
+    </td>
+
+        <td class="hidden-md hidden-sm hidden-xs text-center">
+        <a href="visibility.php?project_id=1">
+            <span class="dynamicsparkline" id="smallchart_1"></span>
+        </a>
+        <script>
+
+                        showTableChart("smallchart_1", [48.9,50.3,50.5,50.5,50.5,50.4,50.8,50.9,47.3,47.5], { 0: '48,9% - 2015-06-17',1: '50,3% - 2015-07-01',2: '50,5% - 2015-07-15',3: '50,5% - 2015-08-05',4: '50,5% - 2015-08-19',5: '50,4% - 2015-09-02',6: '50,8% - 2015-09-16',7: '50,9% - 2015-10-07',8: '47,3% - 2015-10-21',9: '47,5% - 2015-11-04' });
+
+        </script>
+    </td>
+
+    <td>
+                    <div class="row row-small">
+                <div class="col-sm-12 text-center">
+                    <a href="visibility.php?project_id=1&display_metric=visibility_percent">
+                        <span class="  h4">47,5%</span>
+                    </a>
+                </div>
+                <div class="col-sm-12 text-center">
+                    <a href="visibility.php?project_id=1&display_metric=visibility_percent">
+
+                                                <span class="h5  text-success">
+                        <i class="icon-chevron-up icon-white"></i>
+                            0,2%                        </span>
+                    </a>
+                </div>
+            </div>
+
+            </td>
+    <td class="hidden-md hidden-sm hidden-xs">
+                <div class="row row-small">
+            <div class="col-sm-6 text-right">
+                                    <a href="reports_overview_ranking.php?project_id=1&_sel_filter_id=16&_sel_filter=Moved Up >= 1">
+                                                <span class="label label-1em label-success" title="Keywords that moved up at least 1 positions"  >
+                          <i class="icon-chevron-up icon-white"></i>
+                            1.384
+                        </span>
+                                            </a>
+                            </div>
+
+            <div class="col-sm-6 text-left">
+                                    <a href="reports_overview_ranking.php?project_id=1&_sel_filter_id=17&_sel_filter=Moved Down >= 1">
+                                                <span class="label label-1em label-danger" title="Keywords that moved down at least 1 positions"  >
+                        <i class="icon-chevron-down icon-white"></i>
+                          1.409
+                        </span>
+                                            </a>
+                            </div>
+        </div>
+            </td>
+
+    <td>
+
+
+        <div class="row row-small">
+            <div class="col-sm-6 text-right">
+                <div class="dropdown">
+                    <button class="btn btn-default  btn-xs dropdown-toggle" data-toggle="dropdown" id="website-frequency">
+                        biweekly
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left pull-right" role="menu" id="frequency_dropdown">
+
+
+
+
+                                                                        <li>
+                                        <a
+                                                                                    href="#" onclick="$('body').trigger('click');bootbox.alert('Performing these changes would exceed your monthly keyword units quota. Cannot update');"
+                                        >
+                                        &nbsp;daily
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    href="#" onclick="$('body').trigger('click');bootbox.alert('Performing these changes would exceed your monthly keyword units quota. Cannot update');"
+                                        >
+                                        &nbsp;weekly
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(1, '-3')"
+                                        >
+                                        &nbsp;biweekly
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(1, '-4')"
+                                        >
+                                        &nbsp;monthly
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(1, '-2')"
+                                        >
+                                        &nbsp;on demand
+                                        </a>
+                                    </li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-6 text-left">
+                                                                                                            <a class="btn btn-primary  btn-xs" href="#update_now" title="Request an on-demand update"
+                                                                            onclick="onDemand(1, '', -3, 1690, 3786, 1893, '', '', '')"
+                                                         data-toggle="tooltip" data-placement="auto top" data-container="body">
+                                                        <i class="icon icon-play"></i>                        </a>
+
+
+                                        </div>
+        </div>
+    </td>
+    </tr>
+    <tr>
+            <td onclick="_select(4);" class="check-column">
+            <span id="deleteLink4"><i style="cursor:pointer" id="deleteIcon4" class="row-select icon-check-empty icon-large"></i></span>
+            <script type="text/javascript">delete_items.push(4);</script>
+        </td>
+        <td >
+
+        <a href="visibility.php?project_id=4"
+            class="  h4"
+            data-toggle="tooltip"
+            data-placement="top"
+            data-html="true"
+            data-template="<div class='tooltip' role='tooltip'><div class='tooltip-arrow'></div><div class='tooltip-inner tooltip-inner-lg'></div></div>"
+            title="<h5>www.f-p-sa.ch<h5>">
+            <strong>Favorol Papaux SA</strong>
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <a  class="  h4" href="projects.php?action=manageproject&activetab=websitesettings&project_id=4"
+                data-toggle="tooltip"
+                data-placement="right"
+                data-container="body"
+                data-html="true"
+                data-template="<div class='tooltip' role='tooltip'><div class='tooltip-arrow'></div><div class='tooltip-inner tooltip-inner-lg left-inline'></div></div>"
+                title="
+                <h4>Edit settings</h4>
+                <ul class='list-unstyled'>
+                    <li>&bull; 682 keywords</li>
+                    <li>&bull; 10 pages</li>
+                    <li>&bull; 2 search engines</li>
+                    <li>&bull; <span class='text-muted'>Last updated:</span>
+                                                    5 days ago
+                                            </li>
+                    <li>&bull; <span class='text-muted'>Update frequency:</span>
+                        biweekly
+                    </li>
+                    <li>&bull; <span class='text-muted'>Next update:</span>
+                        Next week
+                    </li>
+                </ul>">
+                <i class="icon-cog"></i>
+            </a>
+
+        <br>
+
+        <small title="Nov 4, 2015">
+            <span class="text-muted">Last updated:</span>
+                            5 days ago
+                    </small>
+
+        /
+
+        <small>
+            <span class="text-muted">Next update:</span>
+            <span title="Nov 18, 2015">Next week</span>
+        </small>
+        <br>
+
+        <small>
+            <span class="text-muted">
+                <span title="Pages">Depth</span> / <span title="Search engines">SEs</span> / <span title="Keywords">KWs:</span>
+            </span>
+                            <a href="projects.php?action=manageproject&activetab=websitesettings&project_id=4" title="AWR Cloud will retrieve only the first 10 pages from the search engine">10 pages</a>,
+
+                            <a href="projects.php?action=manageproject&activetab=searchengines&project_id=4">2 SEs</a>,
+
+
+                            <a href="projects.php?action=manageproject&activetab=keywords&project_id=4">682 KWs</a>
+
+                    </small>
+        <br>
+
+
+
+
+
+    </td>
+
+        <td class="hidden-md hidden-sm hidden-xs text-center">
+        <a href="visibility.php?project_id=4">
+            <span class="dynamicsparkline" id="smallchart_4"></span>
+        </a>
+        <script>
+
+                        showTableChart("smallchart_4", [77.5,67.3,73.3,73.2], { 0: '77,5% - 2015-10-20',1: '67,3% - 2015-10-21',2: '73,3% - 2015-10-30',3: '73,2% - 2015-11-04' });
+
+        </script>
+    </td>
+
+    <td>
+                    <div class="row row-small">
+                <div class="col-sm-12 text-center">
+                    <a href="visibility.php?project_id=4&display_metric=visibility_percent">
+                        <span class="  h4">73,2%</span>
+                    </a>
+                </div>
+                <div class="col-sm-12 text-center">
+                    <a href="visibility.php?project_id=4&display_metric=visibility_percent">
+
+                                                <span class="h5  text-danger">
+                        <i class="icon-chevron-down icon-white"></i>
+                            0,1%                        </span>
+                    </a>
+                </div>
+            </div>
+
+            </td>
+    <td class="hidden-md hidden-sm hidden-xs">
+                <div class="row row-small">
+            <div class="col-sm-6 text-right">
+                                    <a href="reports_overview_ranking.php?project_id=4&_sel_filter_id=16&_sel_filter=Moved Up >= 1">
+                                                <span class="label label-1em label-success" title="Keywords that moved up at least 1 positions"  >
+                          <i class="icon-chevron-up icon-white"></i>
+                            541
+                        </span>
+                                            </a>
+                            </div>
+
+            <div class="col-sm-6 text-left">
+                                    <a href="reports_overview_ranking.php?project_id=4&_sel_filter_id=17&_sel_filter=Moved Down >= 1">
+                                                <span class="label label-1em label-danger" title="Keywords that moved down at least 1 positions"  >
+                        <i class="icon-chevron-down icon-white"></i>
+                          160
+                        </span>
+                                            </a>
+                            </div>
+        </div>
+            </td>
+
+    <td>
+
+
+        <div class="row row-small">
+            <div class="col-sm-6 text-right">
+                <div class="dropdown">
+                    <button class="btn btn-default  btn-xs dropdown-toggle" data-toggle="dropdown" id="website-frequency">
+                        biweekly
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left pull-right" role="menu" id="frequency_dropdown">
+
+
+
+
+                                                                        <li>
+                                        <a
+                                                                                    href="#" onclick="$('body').trigger('click');bootbox.alert('Performing these changes would exceed your monthly keyword units quota. Cannot update');"
+                                        >
+                                        &nbsp;daily
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(4, '3')"
+                                        >
+                                        &nbsp;weekly
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(4, '-3')"
+                                        >
+                                        &nbsp;biweekly
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(4, '-4')"
+                                        >
+                                        &nbsp;monthly
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(4, '-2')"
+                                        >
+                                        &nbsp;on demand
+                                        </a>
+                                    </li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-6 text-left">
+                                                                                                            <a class="btn btn-primary  btn-xs" href="#update_now" title="Request an on-demand update"
+                                                                            onclick="onDemand(4, '', -3, 1690, 1364, 682, '4', '', '')"
+                                                         data-toggle="tooltip" data-placement="auto top" data-container="body">
+                                                        <i class="icon icon-play"></i>                        </a>
+
+
+                                        </div>
+        </div>
+    </td>
+    </tr>
+    <tr>
+            <td onclick="_select(2);" class="check-column">
+            <span id="deleteLink2"><i style="cursor:pointer" id="deleteIcon2" class="row-select icon-check-empty icon-large"></i></span>
+            <script type="text/javascript">delete_items.push(2);</script>
+        </td>
+        <td >
+
+        <a href="visibility.php?project_id=2"
+            class="  h4"
+            data-toggle="tooltip"
+            data-placement="top"
+            data-html="true"
+            data-template="<div class='tooltip' role='tooltip'><div class='tooltip-arrow'></div><div class='tooltip-inner tooltip-inner-lg'></div></div>"
+            title="<h5>giampierobodino.com<h5>">
+            <strong>Giampiero Bodino</strong>
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <a  class="  h4" href="projects.php?action=manageproject&activetab=websitesettings&project_id=2"
+                data-toggle="tooltip"
+                data-placement="right"
+                data-container="body"
+                data-html="true"
+                data-template="<div class='tooltip' role='tooltip'><div class='tooltip-arrow'></div><div class='tooltip-inner tooltip-inner-lg left-inline'></div></div>"
+                title="
+                <h4>Edit settings</h4>
+                <ul class='list-unstyled'>
+                    <li>&bull; 12 keywords</li>
+                    <li>&bull; 5 pages</li>
+                    <li>&bull; 7 search engines</li>
+                    <li>&bull; <span class='text-muted'>Last updated:</span>
+                                                    5 days ago
+                                            </li>
+                    <li>&bull; <span class='text-muted'>Update frequency:</span>
+                        weekly
+                    </li>
+                    <li>&bull; <span class='text-muted'>Next update:</span>
+                        In 2 days
+                    </li>
+                </ul>">
+                <i class="icon-cog"></i>
+            </a>
+
+        <br>
+
+        <small title="Nov 4, 2015">
+            <span class="text-muted">Last updated:</span>
+                            5 days ago
+                    </small>
+
+        /
+
+        <small>
+            <span class="text-muted">Next update:</span>
+            <span title="Nov 11, 2015">In 2 days</span>
+        </small>
+        <br>
+
+        <small>
+            <span class="text-muted">
+                <span title="Pages">Depth</span> / <span title="Search engines">SEs</span> / <span title="Keywords">KWs:</span>
+            </span>
+                            <a href="projects.php?action=manageproject&activetab=websitesettings&project_id=2" title="AWR Cloud will retrieve only the first 5 pages from the search engine">5 pages</a>,
+
+                            <a href="projects.php?action=manageproject&activetab=searchengines&project_id=2">7 SEs</a>,
+
+
+                            <a href="projects.php?action=manageproject&activetab=keywords&project_id=2">12 KWs</a>
+
+                    </small>
+        <br>
+
+
+
+
+
+    </td>
+
+        <td class="hidden-md hidden-sm hidden-xs text-center">
+        <a href="visibility.php?project_id=2">
+            <span class="dynamicsparkline" id="smallchart_2"></span>
+        </a>
+        <script>
+
+                        showTableChart("smallchart_2", [30.6,32.8,29.7,31.9,32.0,28.2,30.8,35.0,35.8,35.8], { 0: '30,6% - 2015-09-02',1: '32,8% - 2015-09-09',2: '29,7% - 2015-09-16',3: '31,9% - 2015-09-23',4: '32% - 2015-09-30',5: '28,2% - 2015-10-07',6: '30,8% - 2015-10-14',7: '35% - 2015-10-21',8: '35,8% - 2015-10-28',9: '35,8% - 2015-11-04' });
+
+        </script>
+    </td>
+
+    <td>
+                    <div class="row row-small">
+                <div class="col-sm-12 text-center">
+                    <a href="visibility.php?project_id=2&display_metric=visibility_percent">
+                        <span class="  h4">35,8%</span>
+                    </a>
+                </div>
+                <div class="col-sm-12 text-center">
+                    <a href="visibility.php?project_id=2&display_metric=visibility_percent">
+
+                                                <span class="h5  text-muted">
+                        <i class="icon-minus icon-white"></i>
+                                                    </span>
+                    </a>
+                </div>
+            </div>
+
+            </td>
+    <td class="hidden-md hidden-sm hidden-xs">
+                <div class="row row-small">
+            <div class="col-sm-6 text-right">
+                                    <a href="reports_overview_ranking.php?project_id=2&_sel_filter_id=16&_sel_filter=Moved Up >= 1">
+                                                <span class="label label-1em label-success" title="Keywords that moved up at least 1 positions"  >
+                          <i class="icon-chevron-up icon-white"></i>
+                            10
+                        </span>
+                                            </a>
+                            </div>
+
+            <div class="col-sm-6 text-left">
+                                    <a href="reports_overview_ranking.php?project_id=2&_sel_filter_id=17&_sel_filter=Moved Down >= 1">
+                                                <span class="label label-1em label-danger" title="Keywords that moved down at least 1 positions"  >
+                        <i class="icon-chevron-down icon-white"></i>
+                          11
+                        </span>
+                                            </a>
+                            </div>
+        </div>
+            </td>
+
+    <td>
+
+
+        <div class="row row-small">
+            <div class="col-sm-6 text-right">
+                <div class="dropdown">
+                    <button class="btn btn-default  btn-xs dropdown-toggle" data-toggle="dropdown" id="website-frequency">
+                        weekly
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left pull-right" role="menu" id="frequency_dropdown">
+
+
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(2, '-1')"
+                                        >
+                                        &nbsp;daily
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(2, '3')"
+                                        >
+                                        &nbsp;weekly
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(2, '-3')"
+                                        >
+                                        &nbsp;biweekly
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(2, '-4')"
+                                        >
+                                        &nbsp;monthly
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(2, '-2')"
+                                        >
+                                        &nbsp;on demand
+                                        </a>
+                                    </li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-6 text-left">
+                                                                                                            <a class="btn btn-primary  btn-xs" href="#update_now" title="Request an on-demand update"
+                                                                            onclick="onDemand(2, '', 3, 1690, 36, 18, '2', '', '')"
+                                                         data-toggle="tooltip" data-placement="auto top" data-container="body">
+                                                        <i class="icon icon-play"></i>                        </a>
+
+
+                                        </div>
+        </div>
+    </td>
+    </tr>
+    <tr>
+            <td onclick="_select(3);" class="check-column">
+            <span id="deleteLink3"><i style="cursor:pointer" id="deleteIcon3" class="row-select icon-check-empty icon-large"></i></span>
+            <script type="text/javascript">delete_items.push(3);</script>
+        </td>
+        <td >
+
+        <a href="visibility.php?project_id=3"
+            class="  h4"
+            data-toggle="tooltip"
+            data-placement="top"
+            data-html="true"
+            data-template="<div class='tooltip' role='tooltip'><div class='tooltip-arrow'></div><div class='tooltip-inner tooltip-inner-lg'></div></div>"
+            title="<h5>https://www.swissaid.ch/<h5>">
+            <strong>Swissaid</strong>
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <a  class="  h4" href="projects.php?action=manageproject&activetab=websitesettings&project_id=3"
+                data-toggle="tooltip"
+                data-placement="right"
+                data-container="body"
+                data-html="true"
+                data-template="<div class='tooltip' role='tooltip'><div class='tooltip-arrow'></div><div class='tooltip-inner tooltip-inner-lg left-inline'></div></div>"
+                title="
+                <h4>Edit settings</h4>
+                <ul class='list-unstyled'>
+                    <li>&bull; 351 keywords</li>
+                    <li>&bull; 5 pages</li>
+                    <li>&bull; 3 search engines</li>
+                    <li>&bull; <span class='text-muted'>Last updated:</span>
+                                                    5 days ago
+                                            </li>
+                    <li>&bull; <span class='text-muted'>Update frequency:</span>
+                        monthly
+                    </li>
+                    <li>&bull; <span class='text-muted'>Next update:</span>
+                        In 3 weeks
+                    </li>
+                </ul>">
+                <i class="icon-cog"></i>
+            </a>
+
+        <br>
+
+        <small title="Nov 4, 2015">
+            <span class="text-muted">Last updated:</span>
+                            5 days ago
+                    </small>
+
+        /
+
+        <small>
+            <span class="text-muted">Next update:</span>
+            <span title="Dec 2, 2015">In 3 weeks</span>
+        </small>
+        <br>
+
+        <small>
+            <span class="text-muted">
+                <span title="Pages">Depth</span> / <span title="Search engines">SEs</span> / <span title="Keywords">KWs:</span>
+            </span>
+                            <a href="projects.php?action=manageproject&activetab=websitesettings&project_id=3" title="AWR Cloud will retrieve only the first 5 pages from the search engine">5 pages</a>,
+
+                            <a href="projects.php?action=manageproject&activetab=searchengines&project_id=3">3 SEs</a>,
+
+
+                            <a href="projects.php?action=manageproject&activetab=keywords&project_id=3">351 KWs</a>
+
+                    </small>
+        <br>
+
+
+
+
+
+    </td>
+
+        <td class="hidden-md hidden-sm hidden-xs text-center">
+        <a href="visibility.php?project_id=3">
+            <span class="dynamicsparkline" id="smallchart_3"></span>
+        </a>
+        <script>
+
+                        showTableChart("smallchart_3", [45.5,45.5,45.7], { 0: '45,5% - 2015-10-08',1: '45,5% - 2015-10-14',2: '45,7% - 2015-11-04' });
+
+        </script>
+    </td>
+
+    <td>
+                    <div class="row row-small">
+                <div class="col-sm-12 text-center">
+                    <a href="visibility.php?project_id=3&display_metric=visibility_percent">
+                        <span class="  h4">45,7%</span>
+                    </a>
+                </div>
+                <div class="col-sm-12 text-center">
+                    <a href="visibility.php?project_id=3&display_metric=visibility_percent">
+
+                                                <span class="h5  text-success">
+                        <i class="icon-chevron-up icon-white"></i>
+                            0,2%                        </span>
+                    </a>
+                </div>
+            </div>
+
+            </td>
+    <td class="hidden-md hidden-sm hidden-xs">
+                <div class="row row-small">
+            <div class="col-sm-6 text-right">
+                                    <a href="reports_overview_ranking.php?project_id=3&_sel_filter_id=16&_sel_filter=Moved Up >= 1">
+                                                <span class="label label-1em label-success" title="Keywords that moved up at least 1 positions"  >
+                          <i class="icon-chevron-up icon-white"></i>
+                            224
+                        </span>
+                                            </a>
+                            </div>
+
+            <div class="col-sm-6 text-left">
+                                    <a href="reports_overview_ranking.php?project_id=3&_sel_filter_id=17&_sel_filter=Moved Down >= 1">
+                                                <span class="label label-1em label-danger" title="Keywords that moved down at least 1 positions"  >
+                        <i class="icon-chevron-down icon-white"></i>
+                          181
+                        </span>
+                                            </a>
+                            </div>
+        </div>
+            </td>
+
+    <td>
+
+
+        <div class="row row-small">
+            <div class="col-sm-6 text-right">
+                <div class="dropdown">
+                    <button class="btn btn-default  btn-xs dropdown-toggle" data-toggle="dropdown" id="website-frequency">
+                        monthly
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu text-left pull-right" role="menu" id="frequency_dropdown">
+
+
+
+
+                                                                        <li>
+                                        <a
+                                                                                    href="#" onclick="$('body').trigger('click');bootbox.alert('Performing these changes would exceed your monthly keyword units quota. Cannot update');"
+                                        >
+                                        &nbsp;daily
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(3, '3')"
+                                        >
+                                        &nbsp;weekly
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(3, '-3')"
+                                        >
+                                        &nbsp;biweekly
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(3, '-4')"
+                                        >
+                                        &nbsp;monthly
+                                        </a>
+                                    </li>
+
+
+                                                                        <li>
+                                        <a
+                                                                                    style="cursor: pointer" onclick="$('body').trigger('click');changeFreq(3, '-2')"
+                                        >
+                                        &nbsp;on demand
+                                        </a>
+                                    </li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-6 text-left">
+                                                                                                            <a class="btn btn-primary  btn-xs" href="#update_now" title="Request an on-demand update"
+                                                                            onclick="onDemand(3, '', -4, 1690, 176, 88, '3', '', '')"
+                                                         data-toggle="tooltip" data-placement="auto top" data-container="body">
+                                                        <i class="icon icon-play"></i>                        </a>
+
+
+                                        </div>
+        </div>
+    </td>
+    </tr>
+
+
+</tbody>
+</table>
+</div>
+
+    <div class="table-pagination right-inline">
+                    </div>
+
+
+            <!-- EDIT TAG FORM -->
+<div class="modal fade" id="edit_tag">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3>Edit Tag</h3>
+            </div>
+
+            <form method="post" action="projects.php" id="edittagform" name="edittagform">
+                <input type="hidden" name="action" value="edit_tag_name">
+                <input type="hidden" name="tag_id" id="tag_id_field" value="">
+                <div class="modal-body">
+                    <label for="tag_name">Tag name:</label>
+                    <input type="text" class="form-control" name="tag_name" id="tag_name" maxlength="35">
+                </div>
+                <div class="modal-footer">
+                    <a href="#"  onclick="delete_tag($('#tag_id_field').val());" class="btn btn-default btn-danger-hover">Delete tag</a>
+                    or
+                    <a href="#" class="btn btn-default btn-primary" onclick="if($('#tag_name').val().trim().length>0) $('#edittagform').submit(); else  bootbox.alert('Please enter a valid tag name');">Update tag</a>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<script>
+var report_active_tab = '';
+var color_prj_id = '1';
+</script>
+<script type="text/javascript" src="/js/prj_color_picker.js"></script>		</div> <!-- end  .container-main -->
+        <h5 id="filter_indicator" class="hidden" style="padding : 8px"></h5>
+
+    <script type="text/javascript">
+//    updateNotifications();
+</script>
+ <BR><BR><BR><BR>
+
+
+<script>
+(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;
+s.src='https://widget.intercom.io/widget/u8jb8tek';
+var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+
+    <script id="IntercomSettingsScriptTag">
+  var intercomSettings = {
+    // TODO: The current logged in user's email address.
+    email: "benoit.pointet@liip.ch",
+    // TODO: The current logged in user's sign-up date as a Unix timestamp.
+    created_at: 1397001600,
+  'plan' : 'Pro',
+  'account_type' : 'paid',
+
+  'price' : 99,
+
+
+          'Name' : 'Benoit Pointet',
+  'first_name' : 'Benoit',
+  'last_name' : 'Pointet',
+  'expiry_date_at' : '',
+  'first_purchase_at' : 1397041860,
+  'payment_status': '',
+
+
+  'users' : 0,
+  'reports' : 0,
+  'websites' : 4,
+  'used_keyword_units' : 5310,
+
+
+
+  "widget": {
+    "activator": "#IntercomTrigger"
+  },
+    app_id: "u8jb8tek"
+  };
+</script>
+
+<script>
+
+    window.onpopstate = function(event) {
+        if(event.state!=null) {
+            var html = event.state.html;
+            $('#response').html(html);
+        }
+    };
+
+
+    $(function() {
+        // wait for DOM to fully load
+        $("#cfr").html('<iframe src="https://www.advancedwebranking.com/awrcloudauth.php?a=1" width="1" height="1" class="sr-only"></iframe>');
+    });
+    var basedir = "/";
+</script>
+
+<div id="cfr"></div>
+
+<script type="text/javascript">
+  var _mfq = _mfq || [];
+  (function() {
+      var mf = document.createElement("script"); mf.type = "text/javascript"; mf.async = true;
+      mf.src = "//cdn.mouseflow.com/projects/a061a5b5-0afb-4c79-b743-f0179f588ca0.js";
+      document.getElementsByTagName("head")[0].appendChild(mf);
+  })();
+</script>
+
+</body>
+</html>
