@@ -141,7 +141,7 @@ class AwrCloudAPI:
 
         response = self._session.post(url, data, params=params, headers=browser_headers)
         if self._debug:
-            print_request_info("post %s" % action, url, response, data, True)
+            print_request_info("post %s" % action, url, response, data)
         return response
 
 
