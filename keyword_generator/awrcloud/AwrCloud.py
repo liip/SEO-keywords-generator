@@ -1,7 +1,7 @@
 import logging
 
-from AwrCloudApi import AwrCloudAPI
 from keyword_generator.awrcloud import pages_parser
+from keyword_generator.awrcloud.AwrCloudApi import AwrCloudAPI
 from keyword_generator.awrcloud.AwrCloudProject import AwrCloudProject
 
 __author__ = 'fabrice'

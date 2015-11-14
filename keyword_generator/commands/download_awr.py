@@ -1,6 +1,6 @@
 import click
-from base import cli, get_awr_cloud_project, set_parameter_value
 from keyword_generator import csv
+from keyword_generator.commands.base import set_parameter_value, cli, get_awr_cloud_project
 from keyword_generator.csv import save_csv
 
 __author__ = 'fabrice'

@@ -1,5 +1,5 @@
-import csv
 import os
+
 import keyword_generator.csv as csv
 from keyword_generator.kw_generator.generator_objects import KeywordSets
 from .generator_objects import KeywordsCombination

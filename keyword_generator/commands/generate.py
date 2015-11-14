@@ -1,9 +1,9 @@
 import click
+from keyword_generator.commands.base import set_parameter_value, cli
+
 from keyword_generator.kw_generator import generate_combinations, save_combinations
 
 __author__ = 'fabrice'
-from base import cli, set_parameter_value
-
 
 @cli.command(help="Generate keywords from an input directory")
 @click.argument('input-dir', type=click.Path(exists=True), default=".")

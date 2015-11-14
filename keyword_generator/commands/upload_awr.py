@@ -1,10 +1,10 @@
 from keyword_generator import csv
+from keyword_generator.commands.base import get_awr_cloud_project, cli
 
 __author__ = 'fabrice'
 
 import click
 
-from base import cli, get_awr_cloud_project
 
 
 @cli.command(name='upload-awr', help='Upload keyphrases and groups to AWR Cloud using generated keyword file')

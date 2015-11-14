@@ -1,4 +1,5 @@
 import click
+
 from keyword_generator.awrcloud.AwrCloud import AwrCloud
 
 
@@ -23,7 +24,7 @@ def set_parameter_value(ctx, name, value):
     ctx.obj["data"][name] = value
 
 def get_awr_cloud_project(password, username, project_id=None):
-    awr_cloud = AwrCloud(username, password, dry_run=False, debug=False)
+    awr_cloud = AwrCloud(username, password, dry_run=False, debug=True)
     projects = awr_cloud.get_projects()
     if project_id is None:
         selected_project = select_project(projects)

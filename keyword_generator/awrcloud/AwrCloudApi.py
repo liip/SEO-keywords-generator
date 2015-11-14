@@ -8,11 +8,12 @@ browser_headers={
     "Accept-Language" : "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
     "Upgrade-Insecure-Requests" : 1,
     "User-Agent" : "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36",
-    "Content-Type" : "application/x-www-form-urlencoded",
+    "Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8",
     "Accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
     "Cache-Control" : "max-age=0",
     "Referer" : "https://www.awrcloud.com/login.php",
-    "Connection" : "keep-alive"
+    "Connection" : "keep-alive",
+    "X-Requested-With":"XMLHttpRequest",
 }
 
 connection_data = {
@@ -84,7 +85,7 @@ class AwrCloudAPI:
             "group_id" : -3,
             "new_group" : ""
         }
-        return self.post_project_action("projects", "manageproject", data)
+        return self.post_project_action("projects", None, data)
 
     def assign_keyword_to_existing_group(self, keyword_ids, project_id, group_id):
         data = {
@@ -128,9 +129,10 @@ class AwrCloudAPI:
         return response
 
     def post_project_action(self, page, action, data):
+
         params = {
             "action" : action,
-        }
+        } if action is not None else None
         url = awr_cloud_url + "/" + page + ".php"
 
         if self._dry_run:
@@ -139,7 +141,7 @@ class AwrCloudAPI:
 
         response = self._session.post(url, data, params=params, headers=browser_headers)
         if self._debug:
-            print_request_info("post %s" % action, url, response, data)
+            print_request_info("post %s" % action, url, response, data, True)
         return response
 
 

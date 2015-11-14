@@ -1,7 +1,5 @@
 from collections import OrderedDict
 import itertools
-from keyword_generator.utils import OrderedSet
-
 
 class Keyword:
     def __init__(self, keyword, langs):
