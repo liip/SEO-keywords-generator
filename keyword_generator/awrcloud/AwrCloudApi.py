@@ -149,7 +149,7 @@ class AwrCloudAPI:
         url = awr_cloud_url + "/" + page + ".php"
         response = self._session.get(url, params=params, headers=browser_headers)
         if self._debug:
-            print("GET on page %s" % url + "?"+"&".join([k+"="+v for k, v in params.iteritems()]) if len(params)!=0 else "")
+            print("GET on page %s" % url + "?"+"&".join([k+"="+v for k, v in iter(params.items())]) if len(params)!=0 else "")
             print_request_info("get %s" % page, url, response)
         return response
 

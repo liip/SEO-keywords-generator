@@ -10,6 +10,8 @@ setup(
     packages=find_packages(exclude=('tests', 'tests.*')),
     install_requires=[
         'click>=3.3',
+        'beautifulsoup4>=4.4.1',
+        'requests>=2.8.1'
     ],
     entry_points={
         'console_scripts': 'kwgen=keyword_generator.commands.base:cli'

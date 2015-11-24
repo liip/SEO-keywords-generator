@@ -32,7 +32,7 @@ def upload_awr(gen_kw_file, username, password, project_id):
 
     assigned_groups = set()
     awr_cloud_project.fetch_groups()
-    for group, keyphrases in assignations.iteritems():
+    for group, keyphrases in iter(assignations.items()):
         awr_cloud_project.assign_to_group(keyphrases, group)
         assigned_groups.add(group)
 

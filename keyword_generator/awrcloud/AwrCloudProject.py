@@ -9,7 +9,7 @@ class AwrCloudProject:
         self._awr_cloud_connector = awr_cloud_connector
 
     def determine_unused_groups(self, used_groups_names):
-        return [group for group_name, group in self._groups.iteritems() if group_name not in used_groups_names]
+        return [group for group_name, group in iter(self._groups.items()) if group_name not in used_groups_names]
 
     def delete_groups(self, groups):
         self._awr_cloud_connector.delete_groups(self._project_id, [group.id for group in groups])

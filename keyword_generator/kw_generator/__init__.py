@@ -46,6 +46,6 @@ def save_combinations(filepath, generatedResult):
                          keyphrase,
                          "|".join(groups.lang),
                          "|".join(groups.topics)
-                     ] for keyphrase, groups in generatedResult.iteritems()
+                     ] for keyphrase, groups in iter(generatedResult.items())
                  ],
                  ["keyphrase", "lang", "topics"])
