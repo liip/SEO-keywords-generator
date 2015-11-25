@@ -20,9 +20,12 @@ def parse_keywords_from_html(content):
     rows = table.tbody.find_all("tr")
     keywords = []
     for row in rows:
-        cell = row.find_all("td")[2]
-        id = parse_keyword_id(cell["onclick"])
-        keywords.append(AwrKeyword(cell.text.strip(), id))
+        cells = row.find_all("td")
+        for cell in cells:
+            if cell.has_attr("onclick"):
+                id = parse_keyword_id(cell["onclick"])
+                keywords.append(AwrKeyword(cell.text.strip(), id))
+                break
     return keywords
 
 def parse_total_keywords(content):

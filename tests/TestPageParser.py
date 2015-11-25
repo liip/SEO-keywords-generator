@@ -8,7 +8,7 @@ import unittest
 
 class TestPageParser(unittest.TestCase):
 
-    def test_parse_keywords_page(self):
+    def test_parse_keywords_page_with_anchors(self):
         with open(get_fixture_file("fixtures/html/keywords_page.html"), "r") as f:
             s = f.read()
         keywords = pages_parser.parse_keywords_from_html(s)
@@ -16,6 +16,18 @@ class TestPageParser(unittest.TestCase):
             [
                 AwrKeyword(u"responsive design", "1"),
                 AwrKeyword(u"analytics", "2")
+            ],
+            keywords
+        )
+
+    def test_parse_keywords_page_without_anchors(self):
+        with open("fixtures/html/keywords_page_wo_anchors.html", "r") as f:
+            s = f.read()
+        keywords = pages_parser.parse_keywords_from_html(s)
+        self.assertEqual(
+            [
+                AwrKeyword(u"responsive design", "7"),
+                AwrKeyword(u"analytics", "8")
             ],
             keywords
         )
