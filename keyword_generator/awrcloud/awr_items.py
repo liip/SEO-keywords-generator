@@ -2,7 +2,7 @@ __author__ = 'fabrice'
 
 class AwrKeyword:
     def __init__(self, name, id):
-        self.name = name.encode('utf-8')
+        self.name = name
         self.id = id
 
     def __repr__(self):
@@ -14,7 +14,7 @@ class AwrKeyword:
 
 class AwrGroup:
     def __init__(self, name, id):
-        self.name = name.encode('utf-8')
+        self.name = name
         self.id = id
 
     def __repr__(self):
