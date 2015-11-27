@@ -5,13 +5,11 @@ from keyword_generator.awrcloud.AwrCloud import AwrCloud
 
 @click.group(chain=True)
 #@click.command()
+@click.option('--debug', default=False)
 @click.pass_context
-def cli(ctx):
-    #settings = Settings(config)
+def cli(ctx, debug):
     ctx.obj = {}
-    #ctx.obj['settings'] = settings
-    #ctx.obj['view'] = TtyUi()
-    #ctx.obj['projects_db'] = ProjectsDb(os.path.expanduser(taxi_dir))
+    ctx.obj["DEBUG"] = debug
 
 def get_parameter_value(ctx, name, value):
     if "data" in ctx.obj and name in ctx.obj["data"]:
@@ -23,8 +21,8 @@ def set_parameter_value(ctx, name, value):
         ctx.obj["data"] = {}
     ctx.obj["data"][name] = value
 
-def get_awr_cloud_project(password, username, project_id=None):
-    awr_cloud = AwrCloud(username, password, dry_run=False, debug=False)
+def get_awr_cloud_project(password, username, project_id=None, debug=False):
+    awr_cloud = AwrCloud(username, password, dry_run=False, debug=debug)
     projects = awr_cloud.get_projects()
     if project_id is None:
         selected_project = select_project(projects)

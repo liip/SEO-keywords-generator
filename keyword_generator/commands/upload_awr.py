@@ -1,5 +1,5 @@
 from keyword_generator import csv
-from keyword_generator.commands.base import get_awr_cloud_project, cli
+from keyword_generator.commands.base import get_awr_cloud_project, cli, get_parameter_value
 
 __author__ = 'fabrice'
 
@@ -12,12 +12,15 @@ import click
 @click.option('--username', "-u", prompt=True)
 @click.option('--project-id', "-p")
 @click.password_option(confirmation_prompt=False)
-def upload_awr(gen_kw_file, username, password, project_id):
+@click.pass_context
+def upload_awr(ctx, gen_kw_file, username, password, project_id):
     click.echo("running 'assign_groups' command with:")
     click.echo("gen-kw-file = " + gen_kw_file)
 
+    debug = ctx.obj["DEBUG"]
+
     # choose AWR cloud project
-    awr_cloud_project = get_awr_cloud_project(password, username, project_id)
+    awr_cloud_project = get_awr_cloud_project(password, username, project_id, debug=debug)
 
     # read generated keyphrases file
     keyphrases, assignations = read_assignations(gen_kw_file)
