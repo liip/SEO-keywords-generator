@@ -1,3 +1,4 @@
+from configparser import ConfigParser, NoSectionError, NoOptionError
 import click
 
 from keyword_generator.awrcloud.AwrCloud import AwrCloud
@@ -11,6 +12,7 @@ def cli(ctx, debug):
     ctx.obj = {}
     ctx.obj["DEBUG"] = debug
 
+
 def get_parameter_value(ctx, name, value):
     if "data" in ctx.obj and name in ctx.obj["data"]:
         return ctx.obj["data"][name]
@@ -20,6 +22,31 @@ def set_parameter_value(ctx, name, value):
     if "data" not in ctx.obj:
         ctx.obj["data"] = {}
     ctx.obj["data"][name] = value
+
+def check_parameter_in_config_file(ctx, name, value):
+    if value is not None:
+        return value
+    def get_param_value_in_config(param):
+        from os import path
+        home = path.expanduser("~")
+        filePath = path.join(home, ".kwgen/config.ini")
+        if not path.isfile(filePath):
+            return value
+        result = None
+        config = ConfigParser()
+        config.read(filePath)
+        try:
+            result = config.get('authentication', param)
+        except (NoSectionError, NoOptionError) as e:
+            return value
+        return result
+
+    p_name = name.name
+    value = get_param_value_in_config(p_name)
+    if value is None:
+        raise Exception("Parameter '%s' is mandatory" % p_name)
+    click.echo("Using parameter '%s' in config file" % p_name)
+    return value
 
 def get_awr_cloud_project(password, username, project_id=None, debug=False):
     awr_cloud = AwrCloud(username, password, dry_run=False, debug=debug)

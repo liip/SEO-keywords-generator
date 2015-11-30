@@ -108,3 +108,13 @@ web,en-fr-de
 web,en-fr-de
 expéricence utilisateur,fr
 ```
+
+### Configuration
+
+It's possible to store your username and password in the file [HOME_DIRECTORY]/.kwgen/config.ini using the following structure:
+
+```
+[authentication]
+username = xxx
+password = yyy
+```

@@ -1,6 +1,6 @@
 import click
 from keyword_generator import csv
-from keyword_generator.commands.base import get_parameter_value, cli
+from keyword_generator.commands.base import cli, get_parameter_value
 
 __author__ = 'fabrice'
 

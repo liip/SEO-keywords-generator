@@ -1,5 +1,5 @@
 import click
-from keyword_generator.commands.base import set_parameter_value, cli
+from keyword_generator.commands.base import cli, set_parameter_value
 
 from keyword_generator.kw_generator import generate_combinations, save_combinations
 

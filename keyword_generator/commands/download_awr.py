@@ -1,15 +1,15 @@
 import click
-from keyword_generator import csv
-from keyword_generator.commands.base import set_parameter_value, cli, get_awr_cloud_project
+from keyword_generator.commands.base import cli, check_parameter_in_config_file, set_parameter_value, \
+    get_awr_cloud_project
 from keyword_generator.csv import save_csv
 
 __author__ = 'fabrice'
 
 @cli.command(name='download-awr', help='Download keyphrases from AWR cloud into a file (AWR Cloud keyword export)')
 @click.argument('output', default='awr_kw_export.csv')
-@click.option('--username', "-u", prompt=True)
+@click.option('--username', "-u", callback=check_parameter_in_config_file)
+@click.option('--password', callback=check_parameter_in_config_file)
 @click.option('--project-id', "-p")
-@click.password_option(confirmation_prompt=False)
 @click.pass_context
 def download_awr(ctx, output, username, password, project_id):
 
