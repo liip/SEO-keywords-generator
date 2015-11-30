@@ -1,4 +1,5 @@
 import os
+import click
 
 import keyword_generator.csv as csv
 from keyword_generator.kw_generator.generator_objects import KeywordSets
@@ -40,7 +41,7 @@ def generate_combinations(root_dir):
     return KeywordsCombination(patterns, languages).generate()
 
 def save_combinations(filepath, generatedResult):
-    csv.save_csv(filepath,
+    exportedRows = csv.save_csv(filepath,
                  [
                      [
                          keyphrase,
@@ -49,3 +50,4 @@ def save_combinations(filepath, generatedResult):
                      ] for keyphrase, groups in iter(generatedResult.items())
                  ],
                  ["keyphrase", "lang", "topics"])
+    click.echo("Number of generated keywords : " + str(exportedRows))

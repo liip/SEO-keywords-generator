@@ -30,5 +30,8 @@ def save_csv(filepath, lines, headers):
         spamwriter = csv.writer(csvfile, delimiter=delimiter,
                                 quotechar=quotechar)
         spamwriter.writerow(headers)
+        exportedRows = 0
         for line in lines:
             spamwriter.writerow(line)
+            exportedRows+=1
+        return exportedRows
