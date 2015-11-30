@@ -34,10 +34,10 @@ def read_keyword_sets(dir):
             keywords.append(read_keywords_csv(path_join(dir, filepath), filepath[:-4]))
     return KeywordSets(keywords)
 
-def generate_combinations(root_dir):
+def generate_combinations(root_dir, pattern_file="patterns.csv"):
     keyword_sets = read_keyword_sets(path_join(root_dir, "keyword_placeholders"))
     languages = read_language_csv(path_join(root_dir, "languages.csv"))
-    patterns = read_patterns_csv(path_join(root_dir, "patterns.csv"), keyword_sets)
+    patterns = read_patterns_csv(path_join(root_dir, pattern_file), keyword_sets)
     return KeywordsCombination(patterns, languages).generate()
 
 def save_combinations(filepath, generatedResult):
