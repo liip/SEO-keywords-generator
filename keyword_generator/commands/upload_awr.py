@@ -16,7 +16,7 @@ def upload_awr(ctx, gen_kw_file, username, password, project_id):
     click.echo("gen-kw-file = " + gen_kw_file)
 
     # choose AWR cloud project
-    awr_cloud_project = get_awr_cloud_project(password, username, project_id, debug=debug)
+    awr_cloud_project = get_awr_cloud_project(password, username, project_id)
 
     # read generated keyphrases file
     keyphrases, assignations = read_assignations(gen_kw_file)
