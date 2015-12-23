@@ -15,7 +15,7 @@ def read_language_csv(filepath):
     return [row[0] for row in csv.get_rows(filepath)]
 
 def read_patterns_csv(filepath, keyword_sets):
-    return [Pattern(row[0], keyword_sets) for row in csv.get_rows(filepath)]
+    return [Pattern(row[0], row[1], keyword_sets) for row in csv.get_rows(filepath)]
 
 def read_keywords_csv(filepath, keyword_set_name):
     keywords = [Keyword(row[0], set([lang for lang in row[1].split("-")])) for row in csv.get_rows(filepath)]
@@ -45,9 +45,10 @@ def save_combinations(filepath, generatedResult):
                  [
                      [
                          keyphrase,
-                         "|".join(groups.lang),
-                         "|".join(groups.topics)
-                     ] for keyphrase, groups in iter(generatedResult.items())
+                         "|".join(infos.lang),
+                         "|".join(infos.topics),
+                         "|".join(infos.pattern_names)
+                     ] for keyphrase, infos in iter(generatedResult.items())
                  ],
-                 ["keyphrase", "lang", "topics"])
+                 ["keyphrase", "lang", "topics", "pattern name"])
     click.echo("Number of generated keywords : " + str(exportedRows))

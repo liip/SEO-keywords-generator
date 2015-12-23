@@ -25,7 +25,7 @@ class AwrCloudProject:
         if group in self._groups:
             groupObj = self._groups[group]
             response = self._awr_cloud_connector.assign_keyword_to_existing_group(kwIds, self._project_id, groupObj.id)
-            print ("%s keyphrases to existing group '%s'" % (len(kwObjs), groupObj))
+            print ("%s keyphrases to existing group %s" % (len(kwObjs), groupObj))
         else:
             response = self._awr_cloud_connector.assign_keyword_to_new_group(kwIds, self._project_id, group)
             print ("%s keyphrases assigned to new group '%s'" % (len(kwObjs), group))

@@ -18,7 +18,7 @@ class AwrGroup:
         self.id = id
 
     def __repr__(self):
-        return "%s (id=%s)" % (self.name, self.id)
+        return "'%s' (id=%s)" % (self.name, self.id)
 
     def __eq__(self, other):
         return self.id == other.id and self.name == other.name

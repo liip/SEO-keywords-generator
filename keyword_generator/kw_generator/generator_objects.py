@@ -36,9 +36,10 @@ class KeywordSets:
         return self._keyword_sets[topic]
 
 class Pattern:
-    def __init__(self, patternStr, keyword_sets):
+    def __init__(self, pattern_str, pattern_names, keyword_sets):
         self._keyword_sets = keyword_sets
-        self.topics = [key.strip() for key in patternStr.split(" ")]
+        self.names = pattern_names.strip().split("|")
+        self.topics = [key.strip() for key in pattern_str.split(" ")]
 
     def generate_combinations(self, lang):
         combinations = [
@@ -46,10 +47,11 @@ class Pattern:
         ]
         return itertools.product(*combinations)
 
-class Groups:
-    def __init__(self, topics, lang):
+class KeyphraseProperties:
+    def __init__(self, topics, lang, pattern_names):
         self.topics = set(topics)
         self.lang = set([lang])
+        self.pattern_names = pattern_names
 
     def merge(self, groups):
         self.topics.update(groups.topics)
@@ -70,11 +72,11 @@ class KeywordsCombination:
                 combinations = pattern.generate_combinations(lang)
                 for combination in combinations:
                     keyphrase = self.combination_to_keyphrase(combination)
-                    groups = Groups(pattern.topics, lang)
+                    infos = KeyphraseProperties(pattern.topics, lang, pattern.names)
                     if keyphrase in result:
-                        result[keyphrase].merge(groups)
+                        result[keyphrase].merge(infos)
                     else:
-                        result[keyphrase] = groups
+                        result[keyphrase] = infos
         return result
 
     def combination_to_keyphrase(self, combination):
