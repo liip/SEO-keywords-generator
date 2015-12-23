@@ -86,6 +86,6 @@ def read_assignations(gen_kw_file):
         pattern_names = generated_keyphrase[3].split("|")
         for pattern_name in pattern_names:
             if pattern_name != '':
-                assign(kp, pattern_name.replace(" ", "_"))
+                assign(kp, "pattern_" + pattern_name.replace(" ", "-"))
 
     return (keyphrases, assignation)
