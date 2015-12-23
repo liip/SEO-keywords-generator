@@ -88,6 +88,14 @@ service location
 theme service
 ```
 
+It is possible to give a name to patterns, so additional groups will be associated to corresponding patterns. Multiple names can be associated to a pattern. If so, they must be separated with "|"
+
+```
+service location
+theme service,name 1
+theme service location,name 2|other
+```
+
 ##### langage.csv
 Contains the list of languages to output
 exemple:
@@ -108,6 +116,20 @@ web,en-fr-de
 web,en-fr-de
 expéricence utilisateur,fr
 ```
+
+### Keyword groups associated during keyword upload
+When uploading keyphrases to AWRCloud, keyword groups will automatically associated to uploaded keywords.
+
+The using the command
+
+```
+kwgen upload-awr
+```
+The following patterns will be created:
+
+- for each language of the associated with the keyword, a group 'lang_[LANGUAGE]' will be associated
+- for each name of the pattern, a group 'pattern_[LANGUAGE]' will be associated
+- a group corresponding to the topics associated with the pattern will be associated. If the topics composing the pattern are : "service", "location", the groupe associated will be : "pattern_service-location"
 
 ### Configuration
 
