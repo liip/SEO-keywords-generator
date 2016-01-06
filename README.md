@@ -1,85 +1,125 @@
-# Keywords generator
+ # Keywords generator
 ## Introduction
 
-The keyword generator provide multiple commands in order to create keyphrases for SEO monitoring tools such as AWRCloud, the tool currently used at Liip for internal SEO.
+The keyword generator provide multiple commands in order to generate and manage a set of keyphrases for SEO monitoring tools such as AWRCloud, the tool currently used at Liip for internal SEO. It takes an unusual yet powerful generative approach: given a list of *patterns* composed by *keyword_placeholders*, and given a list of keywords for each *keyword_placeholder*, the tool generates all keyphrases (= keyword combinations) corresponding to the patterns based on the keywords listed for each *keyword_placeholder*, accordingly to the languages associated with each keyword.
+
+For a more basic keyword composition tool, see [MergeWords](http://mergewords.com/).
 
 Commands:
 
 | Command      | Description                                                                                |
 |--------------|--------------------------------------------------------------------------------------------|
-| compare-awr  | Compare generated keywords with AWR Cloud keyword export                                   |
-| download-awr | Download keyphrases from AWR cloud into a file *AWR Cloud keyword export*                  |
 | generate     | Generate keywords from an input directory and save it into a file *generated keyword file* |
-| upload-awr   | Upload keyphrases and groups to AWR Cloud using *generated keyword file*                   | 
+| download-awr | Download keyphrases from AWR cloud into a file *AWR Cloud keyword export*                  |
+| compare-awr  | Compare generated keywords with AWR Cloud keyword export                                   |
+| upload-awr   | Upload keyphrases and groups to AWR Cloud using *generated keyword file*                   |
 
 ## Command synthax
-run
+To get general help on the keyword generator:
 ```shell
 kwgen
 ```
-to get general help on the keyword generator
 
-run
+To know options for each commands:
 ```shell
 kwgen [COMMAND] --help
 ```
-to know options for each commands
 
 ## Installation
+
+Download or clone the repository from github.
+
+Then:
 
 ```shell
 sudo python setup.py install
 ```
 
 ## More information about the *generate* command
-**Given:**
 
-1 - a list of *patterns* composed by *keyword_placeholders* separated by spaces such as:
-- service location
-- service theme
+A short example.
 
-2 - a list of langages to output:
-- fr
-- en
+**Given ...**
 
-3 - a list of *localized_possibilities* for each *keyword_placeholders* such as:
+1 - a `languages.csv` file listing all langages concerning that project:
 
-service:
-- development, en
-- développement, fr
+```
+lang
+en
+fr
+```
 
-location:
-- Geneva, en
-- Genève, fr
-- Genf, de
+2 - a `patterns.csv` file listing *patterns*, which are composed by *keyword_placeholders* separated by spaces:
 
-theme:
-- Drupal, en-fr
-- AEM, en-fr-de
+```
+pattern,group,example keyphrase
+theme,prio-1,'e-commerce'
+theme organisation,prio-2,'e-commerce agency'
+theme service,prio-1,i'e-commerce development'
+```
 
-**The script will output:**
+3 - a */keyword_placeholders/* folder of `[PLACEHOLDER].csv` files detailing the real keywords behind each placeholder (in the above defined patterns, there are three placeholders: `theme`, `organisation`, and `service`):
 
-- development Geneva
-- development Drupal
-- development AEM
-- développement Genève
-- développement Drupal
-- développement AEM
+`theme.csv`:
+
+```
+keyword,lang
+web,fr-en
+internet,fr-en
+```
+
+`organisation.csv`:
+
+```
+keyword,lang
+agency,en
+agence,fr
+```
+
+`service.csv`:
+
+```
+keyword,lang
+design,en-fr
+développement,fr
+development,en
+```
+
+**... the script will output a `keywords.csv` file:**
+
+
+
+```
+keyphrase,lang,topics,pattern name
+web,en|fr,theme,prio-1
+internet,en|fr,theme,prio-1
+web agency,en,organisation|theme,prio-2
+internet agency,en,organisation|theme,prio-2
+web design,en|fr,service|theme,prio-1
+web development,en,service|theme,prio-1
+internet design,en|fr,service|theme,prio-1
+internet development,en,service|theme,prio-1
+web agence,fr,organisation|theme,prio-2
+internet agence,fr,organisation|theme,prio-2
+web développement,fr,service|theme,prio-1
+internet développement,fr,service|theme,prio-1
+```
 
 ### Input directory structure
 This directory must contain the following structure:
+
 ```
 ROOT_DIR
 |
 +-- patterns.csv
 +-- languages.csv
 +-- keyword_placeholders
-    +-- [keyword_file_1].csv
+    +-- [placeholder_1].csv
     +-- ...
 ```
 
 #### Input files description
-##### patterns.csv
+##### 
 Contains a list of patterns composed by *keyword_placeholders* separated by spaces
 
 exemple:
@@ -96,18 +136,8 @@ theme service,name 1
 theme service location,name 2|other
 ```
 
-##### langage.csv
-Contains the list of languages to output
-exemple:
-```
-fr
-de
-en
-```
-
-
-##### keyword_files.csv
-for each *keyword_placeholders* KP defined in **patterns.csv**, there must exist a file named "KP.csv". This file contains the list of *localized_possibilities* that the corresponding placeholder will take during the generation. The localized possibilities are the languages separated by '-'
+##### [placeholder].csv
+for each *keyword_placeholders* `KP` defined in **patterns.csv**, there must exist a file named `KP.csv`. This file contains the list of *keywords* that the corresponding placeholder will take during the generation.
 
 exemple:
 file "theme.csv"
@@ -118,18 +148,18 @@ expéricence utilisateur,fr
 ```
 
 ### Keyword groups associated during keyword upload
-When uploading keyphrases to AWRCloud, keyword groups will automatically associated to uploaded keywords.
+When uploading keyphrases to AWRCloud, keyword groups will automatically be associated to uploaded keywords.
 
 The using the command
 
 ```
 kwgen upload-awr
 ```
-The following patterns will be created:
+The following groups will be created:
 
-- for each language of the associated with the keyword, a group 'lang_[LANGUAGE]' will be associated
-- for each name of the pattern, a group 'pattern_[LANGUAGE]' will be associated
-- a group corresponding to the topics associated with the pattern will be associated. If the topics composing the pattern are : "service", "location", the groupe associated will be : "pattern_service-location"
+- for each pattern underlying a keyphrase, a group 'pattern_[PATTERN-NAME]' will be assigned
+- for each language associated with the keyphrase, a group 'lang_[LANGUAGE]' will be assigned
+- a group corresponding to each placeholder associated with the pattern will be assigned. For example, if the placeholders composing the pattern are : "service", "location", the groupe associated will be : "pattern_service-location".
 
 ### Configuration
 

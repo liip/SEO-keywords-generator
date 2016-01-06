@@ -1,4 +1,5 @@
-pattern,prio,example
-theme,1,'e-commerce'
-theme organisation,1,'e-commerce agentur'
-theme service,1,'e-commerce entwicklung'
+pattern,group,example keyphrase
+theme,prio-1,'e-commerce'
+theme organisation,prio-2,'e-commerce agency'
+theme service,prio-1,i'e-commerce development'
+theme service,prio-1,i'e-commerce development'
