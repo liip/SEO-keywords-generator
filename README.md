@@ -41,7 +41,21 @@ A short example.
 
 **Given ...**
 
-1 - a `languages.csv` file listing all langages concerning that project:
+A project directory with the following structure:
+
+```
+ROOT_DIR
+|
++-- patterns.csv
++-- languages.csv
++-- keyword_placeholders
+    +-- [placeholder_1].csv
+    +-- ...
+```
+
+... where ...
+
+`languages.csv` lists all langages concerning that project:
 
 ```
 lang
@@ -49,7 +63,7 @@ en
 fr
 ```
 
-2 - a `patterns.csv` file listing *patterns*, which are composed by *keyword_placeholders* separated by spaces:
+`patterns.csv` lists *patterns*, which are composed by *keyword_placeholders* separated by spaces:
 
 ```
 pattern,group,example keyphrase
@@ -58,9 +72,9 @@ theme organisation,prio-2,'e-commerce agency'
 theme service,prio-1,i'e-commerce development'
 ```
 
-3 - a */keyword_placeholders/* folder of `[PLACEHOLDER].csv` files detailing the real keywords behind each placeholder (in the above defined patterns, there are three placeholders: `theme`, `organisation`, and `service`):
+3 - a `/keyword_placeholders/` folder of `[PLACEHOLDER].csv` files detailing the real keywords behind each placeholder (in the above defined patterns, there are three placeholders: `theme`, `organisation`, and `service`):
 
-`theme.csv`:
+`/keyword_placeholders/theme.csv`:
 
 ```
 keyword,lang
@@ -68,7 +82,7 @@ web,fr-en
 internet,fr-en
 ```
 
-`organisation.csv`:
+`/keyword_placeholders/organisation.csv`:
 
 ```
 keyword,lang
@@ -76,7 +90,7 @@ agency,en
 agence,fr
 ```
 
-`service.csv`:
+`/keyword_placeholders/service.csv`:
 
 ```
 keyword,lang
@@ -85,7 +99,7 @@ développement,fr
 development,en
 ```
 
-**... the script will output a `keywords.csv` file:**
+**... the script will output the following `keywords.csv` file:**
 
 
 
@@ -105,47 +119,13 @@ web développement,fr,service|theme,prio-1
 internet développement,fr,service|theme,prio-1
 ```
 
-### Input directory structure
-This directory must contain the following structure:
+## Group managment
 
-```
-ROOT_DIR
-|
-+-- patterns.csv
-+-- languages.csv
-+-- keyword_placeholders
-    +-- [placeholder_1].csv
-    +-- ...
-```
+### pattern groups
 
-#### Input files description
-##### 
-Contains a list of patterns composed by *keyword_placeholders* separated by spaces
 
-exemple:
-```
-service location
-theme service
-```
+It is possible to attribute groups to patterns – in our above example, we assign the 'prio-1' and 'prio-2' groups to the patterns. Multiple groups can be associated to a pattern by separating them with "|".
 
-It is possible to give a name to patterns, so additional groups will be associated to corresponding patterns. Multiple names can be associated to a pattern. If so, they must be separated with "|"
-
-```
-service location
-theme service,name 1
-theme service location,name 2|other
-```
-
-##### [placeholder].csv
-for each *keyword_placeholders* `KP` defined in **patterns.csv**, there must exist a file named `KP.csv`. This file contains the list of *keywords* that the corresponding placeholder will take during the generation.
-
-exemple:
-file "theme.csv"
-```
-web,en-fr-de
-web,en-fr-de
-expéricence utilisateur,fr
-```
 
 ### Keyword groups associated during keyword upload
 When uploading keyphrases to AWRCloud, keyword groups will automatically be associated to uploaded keywords.
@@ -155,15 +135,15 @@ The using the command
 ```
 kwgen upload-awr
 ```
-The following groups will be created:
+The following groups will be created in AWRCloud:
 
 - for each pattern underlying a keyphrase, a group 'pattern_[PATTERN-NAME]' will be assigned
 - for each language associated with the keyphrase, a group 'lang_[LANGUAGE]' will be assigned
-- a group corresponding to each placeholder associated with the pattern will be assigned. For example, if the placeholders composing the pattern are : "service", "location", the groupe associated will be : "pattern_service-location".
+- a group corresponding to each placeholder associated with the pattern will be assigned. For example, if the pattern is "service location", the associated group will be : "pattern_service-location".
 
 ### Configuration
 
-It's possible to store your username and password in the file [HOME_DIRECTORY]/.kwgen/config.ini using the following structure:
+Store your username and password in the file [HOME_DIRECTORY]/.kwgen/config.ini using the following structure:
 
 ```
 [authentication]
