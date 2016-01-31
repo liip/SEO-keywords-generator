@@ -45,10 +45,10 @@ def save_combinations(filepath, generatedResult):
                  [
                      [
                          keyphrase,
-                         "|".join(infos.lang),
-                         "|".join(infos.topics),
-                         "|".join(infos.pattern_names)
-                     ] for keyphrase, infos in iter(generatedResult.items())
+                         "|".join(sorted(infos.lang)),
+                         "|".join(sorted(infos.topics)),
+                         "|".join(sorted(infos.pattern_names))
+                     ] for keyphrase, infos in iter(sorted(generatedResult.items()))
                  ],
                  ["keyphrase", "lang", "topics", "pattern name"])
     click.echo("Number of generated keywords : " + str(exportedRows))
