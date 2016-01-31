@@ -15,7 +15,7 @@ def generate(ctx, input_dir, patterns_file, output):
 
     set_parameter_value(ctx, "gen-kw-file", output)
 
-    click.echo ("running 'generare' command with:")
+    click.echo ("running 'generate' command with:")
     click.echo ("input_dir = " + input_dir)
     click.echo ("ouput_file = " + output)
     combinations = generate_combinations(input_dir, patterns_file)
