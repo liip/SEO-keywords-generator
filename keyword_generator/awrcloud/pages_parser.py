@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 def read_html(content):
     return BeautifulSoup(content, 'html.parser')
 
-def parse_keyword_id(javascript):
+def parse_id(javascript):
     if not ("(" in javascript and ")" in javascript):
         raise Exception("Malformed javascript to parse id : " + javascript)
     index_open = javascript.index("(")
@@ -24,11 +24,9 @@ def parse_keywords_from_html(content):
     keywords = []
     for row in rows:
         cells = row.find_all("td")
-        for cell in cells:
-            if cell.has_attr("onclick"):
-                id = parse_keyword_id(cell["onclick"])
-                keywords.append(AwrKeyword(cell.text.strip(), id))
-                break
+        id = cells[1].select("input")[0].get("value")
+        word = cells[2].text.strip()
+        keywords.append(AwrKeyword(word, id))
     return keywords
 
 def parse_total_keywords(content):
@@ -53,17 +51,17 @@ def parse_groups_from_html(content):
     rows = tbody.find_all("tr")
     groups = []
     for row in rows:
-        cell = row.find_all("td")[1]
-        links = cell.find_all("a")
-        name = links[0].text.strip()
-        id = cell.input["value"]
-        groups.append(AwrGroup(name, id))
+        if (row.get("class") == "group-row"):
+            cells = row.find_all("td")
+            name = cells[2].text.strip()
+            id = cells[1].input["value"]
+            groups.append(AwrGroup(name, id))
     return groups
 
 def parse_projects_from_html(content):
     def parse_project(project_row):
         cells = project_row.find_all("td")
-        project_id = parse_keyword_id(cells[0]["onclick"])
+        project_id = parse_id(cells[0]["onclick"])
         project_name = cells[1].a["title"][4:-4]
 
         return (project_id, project_name)
