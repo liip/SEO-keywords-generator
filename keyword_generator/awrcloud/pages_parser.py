@@ -24,8 +24,8 @@ def parse_keywords_from_html(content):
     keywords = []
     for row in rows:
         cells = row.find_all("td")
-        id = cells[1].select("input")[0].get("value")
-        word = cells[2].text.strip()
+        id = cells[0].select("input")[0].get("value")
+        word = cells[1].text.strip()
         keywords.append(AwrKeyword(word, id))
     return keywords
 
