@@ -6,7 +6,7 @@ browser_headers={
     "Origin" : "https://www.awrcloud.com",
     "Accept-Encoding" : "gzip, deflate",
     "Accept-Language" : "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
-    "Upgrade-Insecure-Requests" : 1,
+    "Upgrade-Insecure-Requests" : "1",
     "User-Agent" : "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36",
     "Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8",
     "Accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
