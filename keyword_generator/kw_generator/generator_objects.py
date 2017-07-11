@@ -62,10 +62,8 @@ class KeyphraseProperties:
 
 class KeywordsCombination:
 
-    def __init__(self, patterns, langs):
+    def __init__(self, patterns):
         self._patterns = patterns
-        self._langs = langs
-
 
     def generate(self):
         result = OrderedDict()

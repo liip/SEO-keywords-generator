@@ -1,4 +1,4 @@
-pattern,lang,group,example keyphrase
+pattern,languages,group,example keyphrase
 theme,fr|en|de,priority-1,'e-commerce'
 theme organisation,en|de,priority-2,'e-commerce agency'
 organisation theme,fr,priority-2,'agence e-commerce'

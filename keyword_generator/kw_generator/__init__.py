@@ -11,9 +11,6 @@ from .generator_objects import Pattern
 __author__ = 'fabrice'
 
 
-def read_language_csv(filepath):
-    return [row[0] for row in csv.get_rows(filepath)]
-
 def read_patterns_csv(filepath, keyword_sets):
     return [Pattern(row[0], row[1], row[2] if len(row)>1 else "", keyword_sets) for row in csv.get_rows(filepath)]
 
@@ -36,9 +33,8 @@ def read_keyword_sets(dir):
 
 def generate_combinations(root_dir, pattern_file="patterns.csv"):
     keyword_sets = read_keyword_sets(path_join(root_dir, "keyword_placeholders"))
-    languages = read_language_csv(path_join(root_dir, "languages.csv"))
     patterns = read_patterns_csv(path_join(root_dir, pattern_file), keyword_sets)
-    return KeywordsCombination(patterns, languages).generate()
+    return KeywordsCombination(patterns).generate()
 
 def save_combinations(filepath, generatedResult):
     exportedRows = csv.save_csv(filepath,
