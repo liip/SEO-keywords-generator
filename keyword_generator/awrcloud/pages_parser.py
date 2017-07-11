@@ -51,7 +51,7 @@ def parse_groups_from_html(content):
     rows = tbody.find_all("tr")
     groups = []
     for row in rows:
-        if (row.get("class") == "group-row"):
+        if ("group-row" in row.get("class")):
             cells = row.find_all("td")
             name = cells[2].text.strip()
             id = cells[1].input["value"]
