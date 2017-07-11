@@ -1,0 +1,13 @@
+keyphrase,lang,topics,pattern name
+internet,en|fr,theme,prio-a
+internet agence,fr,organisation|theme,prio-b
+internet agency,en,organisation|theme,prio-b
+internet design,en|fr,service|theme,prio-b
+internet development,en,service|theme,prio-b
+internet développement,fr,service|theme,prio-b
+web,en|fr,theme,prio-a
+web agence,fr,organisation|theme,prio-b
+web agency,en,organisation|theme,prio-b
+web design,en|fr,service|theme,prio-b
+web development,en,service|theme,prio-b
+web développement,fr,service|theme,prio-b
