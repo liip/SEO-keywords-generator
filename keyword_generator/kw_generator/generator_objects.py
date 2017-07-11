@@ -37,6 +37,7 @@ class KeywordSets:
 
 class Pattern:
     def __init__(self, pattern_str, pattern_langs, pattern_names, keyword_sets):
+        self.pattern_str = pattern_str
         self._keyword_sets = keyword_sets
         self.names = pattern_names.strip().split("|")
         self.langs = pattern_langs.strip().split("|")
@@ -68,8 +69,9 @@ class KeywordsCombination:
 
     def generate(self):
         result = OrderedDict()
-        for lang in self._langs:
-            for pattern in self._patterns:
+        for pattern in self._patterns:
+            for lang in pattern.langs:
+                print(pattern.pattern_str, lang)
                 combinations = pattern.generate_combinations(lang)
                 for combination in combinations:
                     keyphrase = self.combination_to_keyphrase(combination)
