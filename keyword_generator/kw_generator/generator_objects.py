@@ -36,9 +36,10 @@ class KeywordSets:
         return self._keyword_sets[topic]
 
 class Pattern:
-    def __init__(self, pattern_str, pattern_names, keyword_sets):
+    def __init__(self, pattern_str, pattern_langs, pattern_names, keyword_sets):
         self._keyword_sets = keyword_sets
         self.names = pattern_names.strip().split("|")
+        self.langs = pattern_langs.strip().split("|")
         self.topics = [key.strip() for key in pattern_str.split(" ")]
 
     def generate_combinations(self, lang):

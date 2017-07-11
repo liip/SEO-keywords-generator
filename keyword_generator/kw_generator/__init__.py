@@ -15,7 +15,7 @@ def read_language_csv(filepath):
     return [row[0] for row in csv.get_rows(filepath)]
 
 def read_patterns_csv(filepath, keyword_sets):
-    return [Pattern(row[0], row[1] if len(row)>1 else "", keyword_sets) for row in csv.get_rows(filepath)]
+    return [Pattern(row[0], row[1], row[2] if len(row)>1 else "", keyword_sets) for row in csv.get_rows(filepath)]
 
 def read_keywords_csv(filepath, keyword_set_name):
     keywords = [Keyword(row[0], set([lang for lang in row[1].split("|")])) for row in csv.get_rows(filepath)]

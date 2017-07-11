@@ -66,11 +66,13 @@ fr
 `patterns.csv` lists *patterns*, which are composed by *keyword_placeholders* separated by spaces:
 
 ```
-pattern,group,example keyphrase
-theme,prio-1,'e-commerce'
-theme organisation,prio-2,'e-commerce agency'
-theme service,prio-1,i'e-commerce development'
-```
+pattern,lang,group,example keyphrase
+theme,fr|en|de,priority-1,'e-commerce'
+theme organisation,en|de,priority-2,'e-commerce agency'
+theme organisation,de,priority-2,'e-commerce agentur'
+organisation theme,fr,priority-2,'agence e-commerce'
+theme service,en|de, priority-3,'e-commerce development'
+service theme,fr,priority-3,'développement e-commerce'```
 
 3 - a `/keyword_placeholders/` folder of `[PLACEHOLDER].csv` files detailing the real keywords behind each placeholder (in the above defined patterns, there are three placeholders: `theme`, `organisation`, and `service`):
 
@@ -78,14 +80,15 @@ theme service,prio-1,i'e-commerce development'
 
 ```
 keyword,lang
-web,fr-en
-internet,fr-en
+web,fr|en
+internet,fr|en
 ```
 
 `/keyword_placeholders/organisation.csv`:
 
 ```
 keyword,lang
+agentur,de
 agency,en
 agence,fr
 ```
@@ -94,9 +97,10 @@ agence,fr
 
 ```
 keyword,lang
-design,en-fr
+design,en|fr|de
 développement,fr
 development,en
+entwicklung,de
 ```
 
 **... the script will output the following `keywords.csv` file:**
@@ -104,22 +108,10 @@ development,en
 
 
 ```
-keyphrase,lang,topics,pattern name
-web,en|fr,theme,prio-1
-internet,en|fr,theme,prio-1
-web agency,en,organisation|theme,prio-2
-internet agency,en,organisation|theme,prio-2
-web design,en|fr,service|theme,prio-1
-web development,en,service|theme,prio-1
-internet design,en|fr,service|theme,prio-1
-internet development,en,service|theme,prio-1
-web agence,fr,organisation|theme,prio-2
-internet agence,fr,organisation|theme,prio-2
-web développement,fr,service|theme,prio-1
-internet développement,fr,service|theme,prio-1
+TODO
 ```
 
-## Group managment
+## Group management
 
 ### pattern groups
 

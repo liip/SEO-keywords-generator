@@ -1,13 +1,23 @@
 keyphrase,lang,topics,pattern name
-internet,en|fr,theme,prio-a
-internet agence,fr,organisation|theme,prio-b
-internet agency,en,organisation|theme,prio-b
-internet design,en|fr,service|theme,prio-b
-internet development,en,service|theme,prio-b
-internet développement,fr,service|theme,prio-b
-web,en|fr,theme,prio-a
-web agence,fr,organisation|theme,prio-b
-web agency,en,organisation|theme,prio-b
-web design,en|fr,service|theme,prio-b
-web development,en,service|theme,prio-b
-web développement,fr,service|theme,prio-b
+agence internet,fr,organisation|theme,priority-2
+agence web,fr,organisation|theme,priority-2
+agency internet,en,organisation|theme,priority-2
+agency web,en,organisation|theme,priority-2
+design internet,en|fr,service|theme,priority-3
+design web,en|fr,service|theme,priority-3
+development internet,en,service|theme,priority-3
+development web,en,service|theme,priority-3
+développement internet,fr,service|theme,priority-3
+développement web,fr,service|theme,priority-3
+internet,en|fr,theme,priority-1
+internet agence,fr,organisation|theme,priority-2
+internet agency,en,organisation|theme,priority-2
+internet design,en|fr,service|theme,priority-3
+internet development,en,service|theme,priority-3
+internet développement,fr,service|theme,priority-3
+web,en|fr,theme,priority-1
+web agence,fr,organisation|theme,priority-2
+web agency,en,organisation|theme,priority-2
+web design,en|fr,service|theme,priority-3
+web development,en,service|theme,priority-3
+web développement,fr,service|theme,priority-3
