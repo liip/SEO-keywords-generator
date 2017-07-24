@@ -1,4 +1,6 @@
-pattern,group,example keyphrase
-theme,prio-a,'e-commerce'
-theme organisation,prio-b,'e-commerce agency'
-theme service,prio-b,'e-commerce development'
+pattern,languages,group,example keyphrase
+theme,fr|en|de,priority-1,'e-commerce'
+theme organisation,en|de,priority-2,'e-commerce agency'
+organisation theme,fr,priority-2,'agence e-commerce'
+theme service,en|de, priority-3,'e-commerce development'
+service theme,fr,priority-3,'développement e-commerce'

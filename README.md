@@ -47,45 +47,38 @@ A project directory with the following structure:
 ROOT_DIR
 |
 +-- patterns.csv
-+-- languages.csv
 +-- keyword_placeholders
     +-- [placeholder_1].csv
     +-- ...
 ```
 
-... where ...
-
-`languages.csv` lists all langages concerning that project:
+`patterns.csv` file which lists keyphrases *patterns*, which are composed by *keyword_placeholders* separated by spaces:
 
 ```
-lang
-en
-fr
+pattern,languages,group,example keyphrase
+theme,fr|en|de,priority-1,'e-commerce'
+theme organisation,en|de,priority-2,'e-commerce agency'
+theme organisation,de,priority-2,'e-commerce agentur'
+organisation theme,fr,priority-2,'agence e-commerce'
+theme service,en|de, priority-3,'e-commerce development'
+service theme,fr,priority-3,'développement e-commerce'```
 ```
 
-`patterns.csv` lists *patterns*, which are composed by *keyword_placeholders* separated by spaces:
-
-```
-pattern,group,example keyphrase
-theme,prio-1,'e-commerce'
-theme organisation,prio-2,'e-commerce agency'
-theme service,prio-1,i'e-commerce development'
-```
-
-3 - a `/keyword_placeholders/` folder of `[PLACEHOLDER].csv` files detailing the real keywords behind each placeholder (in the above defined patterns, there are three placeholders: `theme`, `organisation`, and `service`):
+A `/keyword_placeholders/` folder of `[PLACEHOLDER].csv` files detailing the real keywords behind each placeholder (in the above defined patterns, there are three placeholders: `theme`, `organisation`, and `service`):
 
 `/keyword_placeholders/theme.csv`:
 
 ```
-keyword,lang
-web,fr-en
-internet,fr-en
+keyword,languages
+web,fr|en
+internet,fr|en
 ```
 
 `/keyword_placeholders/organisation.csv`:
 
 ```
-keyword,lang
+keyword,languages
+agentur,de
 agency,en
 agence,fr
 ```
@@ -93,33 +86,39 @@ agence,fr
 `/keyword_placeholders/service.csv`:
 
 ```
-keyword,lang
-design,en-fr
+keyword,languages
+design,en|fr|de
 développement,fr
 development,en
+entwicklung,de
 ```
 
-**... the script will output the following `keywords.csv` file:**
-
+**... the script will output all possible keyword combinations in the following `keywords.csv` file:**
 
 
 ```
-keyphrase,lang,topics,pattern name
-web,en|fr,theme,prio-1
-internet,en|fr,theme,prio-1
-web agency,en,organisation|theme,prio-2
-internet agency,en,organisation|theme,prio-2
-web design,en|fr,service|theme,prio-1
-web development,en,service|theme,prio-1
-internet design,en|fr,service|theme,prio-1
-internet development,en,service|theme,prio-1
-web agence,fr,organisation|theme,prio-2
-internet agence,fr,organisation|theme,prio-2
-web développement,fr,service|theme,prio-1
-internet développement,fr,service|theme,prio-1
+keyphrase,languages,topics,pattern name
+agence internet,fr,organisation|theme,priority-2
+agence web,fr,organisation|theme,priority-2
+design internet,fr,service|theme,priority-3
+design web,fr,service|theme,priority-3
+développement internet,fr,service|theme,priority-3
+développement web,fr,service|theme,priority-3
+internet,de|en|fr,theme,priority-1
+internet agency,en,organisation|theme,priority-2
+internet agentur,de,organisation|theme,priority-2
+internet design,de|en,service|theme,priority-3
+internet development,en,service|theme,priority-3
+internet entwicklung,de,service|theme,priority-3
+web,de|en|fr,theme,priority-1
+web agency,en,organisation|theme,priority-2
+web agentur,de,organisation|theme,priority-2
+web design,de|en,service|theme,priority-3
+web development,en,service|theme,priority-3
+web entwicklung,de,service|theme,priority-3
 ```
 
-## Group managment
+## Group management
 
 ### pattern groups
 
