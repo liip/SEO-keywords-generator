@@ -93,11 +93,11 @@ def read_assignations(gen_kw_file):
         assign(kp, group_name)
         for lang in langs:
             assign(kp, group_name + "_" + lang)
-        # assign to pattern names (aka tags)
-        pattern_names = generated_keyphrase[3].split("|")
-        for pattern_name in pattern_names:
-            if pattern_name != '':
-                group_name = "tag_" + pattern_name.replace(" ", "-")
+        # assign to tag groups
+        tags = generated_keyphrase[3].split("|")
+        for tag in tags:
+            if tag != '':
+                group_name = "tag_" + tag.replace(" ", "-")
                 assign(kp, group_name)
                 for lang in langs:
                     assign(kp, group_name + "_" + lang)

@@ -52,16 +52,15 @@ ROOT_DIR
     +-- ...
 ```
 
-`patterns.csv` file which lists keyphrases *patterns*, which are composed by *keyword_placeholders* separated by spaces:
+`patterns.csv` file which lists keyphrases *patterns*, which are composed by *keyword_placeholders* separated by spaces. Note how patterns are attributed to one or many language (the same will go for placeholder files):
 
 ```
-pattern,languages,group,example keyphrase
-theme,fr|en|de,priority-1,'e-commerce'
-theme organisation,en|de,priority-2,'e-commerce agency'
-theme organisation,de,priority-2,'e-commerce agentur'
-organisation theme,fr,priority-2,'agence e-commerce'
-theme service,en|de, priority-3,'e-commerce development'
-service theme,fr,priority-3,'développement e-commerce'```
+pattern,languages,tag,example keyphrase
+theme,fr|en|de,priority-1|words-1,'e-commerce'
+theme organisation,en|de,priority-2|words-2,'e-commerce agency'
+organisation theme,fr,priority-2|words-2,'agence e-commerce'
+theme service,en|de, priority-3|words-2,'e-commerce development'
+service theme,fr,priority-3|words-2,'développement e-commerce'
 ```
 
 A `/keyword_placeholders/` folder of `[PLACEHOLDER].csv` files detailing the real keywords behind each placeholder (in the above defined patterns, there are three placeholders: `theme`, `organisation`, and `service`):
@@ -97,25 +96,25 @@ entwicklung,de
 
 
 ```
-keyphrase,languages,topics,pattern name
-agence internet,fr,organisation|theme,priority-2
-agence web,fr,organisation|theme,priority-2
-design internet,fr,service|theme,priority-3
-design web,fr,service|theme,priority-3
-développement internet,fr,service|theme,priority-3
-développement web,fr,service|theme,priority-3
-internet,de|en|fr,theme,priority-1
-internet agency,en,organisation|theme,priority-2
-internet agentur,de,organisation|theme,priority-2
-internet design,de|en,service|theme,priority-3
-internet development,en,service|theme,priority-3
-internet entwicklung,de,service|theme,priority-3
-web,de|en|fr,theme,priority-1
-web agency,en,organisation|theme,priority-2
-web agentur,de,organisation|theme,priority-2
-web design,de|en,service|theme,priority-3
-web development,en,service|theme,priority-3
-web entwicklung,de,service|theme,priority-3
+keyphrase,lang,topics,tags
+agence internet,fr,organisation|theme,priority-2|words-2
+agence web,fr,organisation|theme,priority-2|words-2
+design internet,fr,service|theme,priority-3|words-2
+design web,fr,service|theme,priority-3|words-2
+développement internet,fr,service|theme,priority-3|words-2
+développement web,fr,service|theme,priority-3|words-2
+internet,de|en|fr,theme,priority-1|words-1
+internet agency,en,organisation|theme,priority-2|words-2
+internet agentur,de,organisation|theme,priority-2|words-2
+internet design,de|en,service|theme,priority-3|words-2
+internet development,en,service|theme,priority-3|words-2
+internet entwicklung,de,service|theme,priority-3|words-2
+web,de|en|fr,theme,priority-1|words-1
+web agency,en,organisation|theme,priority-2|words-2
+web agentur,de,organisation|theme,priority-2|words-2
+web design,de|en,service|theme,priority-3|words-2
+web development,en,service|theme,priority-3|words-2
+web entwicklung,de,service|theme,priority-3|words-2
 ```
 
 ## Group management

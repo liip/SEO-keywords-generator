@@ -1,6 +1,6 @@
-pattern,languages,group,example keyphrase
-theme,fr|en|de,priority-1,'e-commerce'
-theme organisation,en|de,priority-2,'e-commerce agency'
-organisation theme,fr,priority-2,'agence e-commerce'
-theme service,en|de, priority-3,'e-commerce development'
-service theme,fr,priority-3,'développement e-commerce'
+pattern,languages,tag,example keyphrase
+theme,fr|en|de,priority-1|words-1,'e-commerce'
+theme organisation,en|de,priority-2|words-2,'e-commerce agency'
+organisation theme,fr,priority-2|words-2,'agence e-commerce'
+theme service,en|de, priority-3|words-2,'e-commerce development'
+service theme,fr,priority-3|words-2,'développement e-commerce'

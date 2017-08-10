@@ -36,10 +36,10 @@ class KeywordSets:
         return self._keyword_sets[topic]
 
 class Pattern:
-    def __init__(self, pattern_str, pattern_langs, pattern_names, keyword_sets):
+    def __init__(self, pattern_str, pattern_langs, tags, keyword_sets):
         self.pattern_str = pattern_str
         self._keyword_sets = keyword_sets
-        self.names = pattern_names.strip().split("|")
+        self.tags = tags.strip().split("|")
         self.langs = pattern_langs.strip().split("|")
         self.topics = [key.strip() for key in pattern_str.split(" ")]
 
@@ -50,10 +50,10 @@ class Pattern:
         return itertools.product(*combinations)
 
 class KeyphraseProperties:
-    def __init__(self, topics, lang, pattern_names):
+    def __init__(self, topics, lang, tags):
         self.topics = set(topics)
         self.lang = set([lang])
-        self.pattern_names = pattern_names
+        self.tags = tags
 
     def merge(self, groups):
         self.topics.update(groups.topics)
@@ -73,7 +73,7 @@ class KeywordsCombination:
                 combinations = pattern.generate_combinations(lang)
                 for combination in combinations:
                     keyphrase = self.combination_to_keyphrase(combination)
-                    infos = KeyphraseProperties(pattern.topics, lang, pattern.names)
+                    infos = KeyphraseProperties(pattern.topics, lang, pattern.tags)
                     if keyphrase in result:
                         result[keyphrase].merge(infos)
                     else:
