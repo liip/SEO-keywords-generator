@@ -63,29 +63,43 @@ def confirm_continue(message):
     {group : [keyphrase1, keyphrase2, ...]}
 """
 def read_assignations(gen_kw_file):
-    assignation = {}
+    assignations = {}
     rows = csv.get_rows(gen_kw_file)
     keyphrases = set()
+
     def assign(kp, group):
-        if group not in assignation:
-            assignation[group] = [kp]
+        if group not in assignations:
+            assignations[group] = [kp]
         else:
-            assignation[group].append(kp)
+            assignations[group].append(kp)
 
     for generated_keyphrase in rows:
         kp = generated_keyphrase[0]
         keyphrases.add(kp)
-
-        for lang in generated_keyphrase[1].split("|"):
-            assign(kp, "lang_" + lang)
+        # assign to lang groups
+        langs = generated_keyphrase[1].split("|")
+        for lang in langs:
+            group_name = "lang_" + lang
+            assign(kp, group_name)
+        # assign to topics groups
         topics = generated_keyphrase[2].split("|")
         for topic in topics:
-            assign(kp, "topic_" + topic)
-        pattern = "pattern_" + "-".join(topics)
-        assign(kp, pattern)
+            group_name = "topic_" + topic
+            assign(kp, group_name)
+            for lang in langs:
+                assign(kp, group_name + "_" + lang)
+        # assign to pattern groups
+        group_name = "pattern_" + "-".join(topics)
+        assign(kp, group_name)
+        for lang in langs:
+            assign(kp, group_name + "_" + lang)
+        # assign to pattern names (aka tags)
         pattern_names = generated_keyphrase[3].split("|")
         for pattern_name in pattern_names:
             if pattern_name != '':
-                assign(kp, "pattern_" + pattern_name.replace(" ", "-"))
+                group_name = "tag_" + pattern_name.replace(" ", "-")
+                assign(kp, group_name)
+                for lang in langs:
+                    assign(kp, group_name + "_" + lang)
 
-    return (keyphrases, assignation)
+    return (keyphrases, assignations)
