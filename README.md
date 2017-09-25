@@ -52,15 +52,16 @@ ROOT_DIR
     +-- ...
 ```
 
-`patterns.csv` file which lists keyphrases *patterns*, which are composed by *keyword_placeholders* separated by spaces. Note how patterns are attributed to one or many language (the same will go for placeholder files):
+`patterns.csv` file which lists keyphrases *patterns*, which are composed by *keyword_placeholders* separated by spaces (or plus sign for compound words). Note how patterns are attributed to one or many language (the same will go for placeholder files):
 
 ```
 pattern,languages,tag,example keyphrase
-theme,fr|en|de,priority-1|words-1,'e-commerce'
-theme organisation,en|de,priority-2|words-2,'e-commerce agency'
-organisation theme,fr,priority-2|words-2,'agence e-commerce'
-theme service,en|de, priority-3|words-2,'e-commerce development'
-service theme,fr,priority-3|words-2,'développement e-commerce'
+theme,fr|en|de,priority-1|words-1,'web'
+theme organisation,en|de,priority-2|words-2,'web agentur'
+theme+organisation,de,priority-2|words-2,'webagentur'
+organisation theme,fr,priority-2|words-2,'agence web'
+theme service,en|de, priority-3|words-2,'web development'
+service theme,fr,priority-3|words-2,'développement web'
 ```
 
 A `/keyword_placeholders/` folder of `[PLACEHOLDER].csv` files detailing the real keywords behind each placeholder (in the above defined patterns, there are three placeholders: `theme`, `organisation`, and `service`):
@@ -109,12 +110,14 @@ internet agentur,de,organisation|theme,priority-2|words-2
 internet design,de|en,service|theme,priority-3|words-2
 internet development,en,service|theme,priority-3|words-2
 internet entwicklung,de,service|theme,priority-3|words-2
+internetagentur,de,organisation|theme,priority-2|words-2
 web,de|en|fr,theme,priority-1|words-1
 web agency,en,organisation|theme,priority-2|words-2
 web agentur,de,organisation|theme,priority-2|words-2
 web design,de|en,service|theme,priority-3|words-2
 web development,en,service|theme,priority-3|words-2
 web entwicklung,de,service|theme,priority-3|words-2
+webagentur,de,organisation|theme,priority-2|words-2
 ```
 
 ## Group management

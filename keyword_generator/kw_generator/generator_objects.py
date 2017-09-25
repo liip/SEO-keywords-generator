@@ -1,5 +1,5 @@
 from collections import OrderedDict
-import itertools
+import itertools, re
 
 class Keyword:
     def __init__(self, keyword, langs):
@@ -41,7 +41,7 @@ class Pattern:
         self._keyword_sets = keyword_sets
         self.tags = tags.strip().split("|")
         self.langs = pattern_langs.strip().split("|")
-        self.topics = [key.strip() for key in pattern_str.split(" ")]
+        self.topics = [key.strip() for key in re.split(' |\+', pattern_str)]
 
     def generate_combinations(self, lang):
         combinations = [
@@ -72,7 +72,7 @@ class KeywordsCombination:
                 print(pattern.pattern_str, lang)
                 combinations = pattern.generate_combinations(lang)
                 for combination in combinations:
-                    keyphrase = self.combination_to_keyphrase(combination)
+                    keyphrase = self.combination_to_keyphrase(combination, pattern)
                     infos = KeyphraseProperties(pattern.topics, lang, pattern.tags)
                     if keyphrase in result:
                         result[keyphrase].merge(infos)
@@ -80,7 +80,10 @@ class KeywordsCombination:
                         result[keyphrase] = infos
         return result
 
-    def combination_to_keyphrase(self, combination):
-        return " ".join([repr(c).lower() for c in combination])
+    def combination_to_keyphrase(self, combination, pattern):
+        pattern_format = re.sub(r'[^+ ]+','{}',pattern.pattern_str)
+        pattern_format = re.sub(r'\+','',pattern_format)
+        keyphrase = pattern_format.format(*combination)
+        return keyphrase
 
 
